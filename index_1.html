@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ambray Law &amp; Advisory</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<style>
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+:root {
+  --cr:   #6a0009;
+  --cr-d: #4a0006;
+  --gf:   #c9a84c;
+  --gl:   #e0c870;
+  --gp:   #f5e9c0;
+}
+body { font-family:'Cormorant Garamond',serif; background:var(--cr); overflow-x:hidden; }
+::selection { background:var(--gf); color:var(--cr-d); }
+::-webkit-scrollbar { width:3px; }
+::-webkit-scrollbar-track { background:var(--cr-d); }
+::-webkit-scrollbar-thumb { background:var(--gf); }
+
+/* ── NAV ── */
+nav {
+  position:fixed; top:0; left:0; right:0; z-index:100;
+  height:72px; padding:0 60px;
+  display:flex; align-items:center; justify-content:space-between;
+  background:rgba(106,0,9,0.93);
+  backdrop-filter:blur(16px);
+  border-bottom:0.5px solid rgba(201,168,76,0.18);
+  transition:all 0.4s;
+}
+nav.scrolled { background:rgba(74,0,6,0.98); border-bottom-color:rgba(201,168,76,0.3); }
+.nav-logo { text-decoration:none; display:flex; flex-direction:column; }
+.nav-wm  { font-family:'Cinzel',serif; font-size:15px; font-weight:700; color:var(--gf); letter-spacing:0.16em; line-height:1; }
+.nav-r   { display:flex; align-items:center; gap:4px; margin:3px 0; }
+.nav-rl  { flex:1; height:0.5px; background:rgba(201,168,76,0.4); min-width:16px; }
+.nav-rd  { width:3px; height:3px; background:var(--gf); transform:rotate(45deg); flex-shrink:0; }
+.nav-s   { font-family:'Cinzel',serif; font-size:6.5px; letter-spacing:0.26em; color:rgba(201,168,76,0.55); text-transform:uppercase; }
+.nav-cta {
+  font-family:'Cinzel',serif; font-size:9px; letter-spacing:0.2em; text-transform:uppercase;
+  color:var(--gf); border:0.5px solid rgba(201,168,76,0.45);
+  padding:9px 22px; text-decoration:none; transition:all 0.3s; font-weight:500;
+}
+.nav-cta:hover { background:var(--gf); color:var(--cr-d); }
+
+/* ── HERO ── */
+.hero {
+  min-height:100vh; background:var(--cr);
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  position:relative; overflow:hidden; padding:100px 40px 80px;
+}
+.hero::before {
+  content:''; position:absolute; inset:0;
+  background:
+    radial-gradient(ellipse at 50% 0%,  rgba(180,0,20,0.45) 0%,transparent 60%),
+    radial-gradient(ellipse at 50% 100%,rgba(40,0,5,0.65)   0%,transparent 55%);
+  pointer-events:none;
+}
+.v-line { position:absolute; top:0; bottom:0; width:0.5px; background:linear-gradient(180deg,transparent,rgba(201,168,76,0.18) 30%,rgba(201,168,76,0.18) 70%,transparent); }
+.v-line-l { left:60px; } .v-line-r { right:60px; }
+.rings { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; pointer-events:none; }
+.ring  { position:absolute; border-radius:50%; border:0.5px solid rgba(201,168,76,0.06); animation:breathe 9s ease-in-out infinite; }
+.ring:nth-child(1){width:260px;height:260px}
+.ring:nth-child(2){width:460px;height:460px;animation-delay:1.5s}
+.ring:nth-child(3){width:660px;height:660px;animation-delay:3s;border-color:rgba(201,168,76,0.03)}
+.ring:nth-child(4){width:880px;height:880px;animation-delay:4.5s;border-color:rgba(201,168,76,0.02)}
+@keyframes breathe { 0%,100%{opacity:.5;transform:scale(1)} 50%{opacity:1;transform:scale(1.012)} }
+.hero-content { position:relative; z-index:2; display:flex; flex-direction:column; align-items:center; }
+.hero-ambray {
+  font-family:'Cinzel',serif; font-size:clamp(58px,11vw,114px);
+  font-weight:700; letter-spacing:0.14em; line-height:1;
+  color:var(--gf); text-align:center;
+  filter:drop-shadow(0 3px 0 rgba(80,40,0,0.2));
+  opacity:0; animation:riseIn 1.2s 0.3s cubic-bezier(0.22,1,0.36,1) forwards;
+}
+.hero-div {
+  display:flex; align-items:center; gap:10px;
+  margin:20px 0 18px; width:clamp(240px,48vw,500px);
+  opacity:0; animation:riseIn 1.2s 0.55s cubic-bezier(0.22,1,0.36,1) forwards;
+}
+.hd-l { flex:1; height:0.5px; background:linear-gradient(90deg,transparent,rgba(201,168,76,0.55) 35%,rgba(228,200,112,0.75) 50%,rgba(201,168,76,0.55) 65%,transparent); }
+.hd-d { width:9px; height:9px; background:var(--gf); transform:rotate(45deg); flex-shrink:0; filter:drop-shadow(0 0 4px rgba(201,168,76,0.35)); }
+.hero-sub {
+  font-family:'Cinzel',serif; font-size:clamp(13px,2vw,21px);
+  font-weight:400; letter-spacing:0.32em; color:rgba(201,168,76,0.65);
+  text-align:center; text-transform:uppercase;
+  opacity:0; animation:riseIn 1.2s 0.7s cubic-bezier(0.22,1,0.36,1) forwards;
+}
+.hero-opening {
+  margin-top:36px; display:flex; align-items:center; gap:10px;
+  opacity:0; animation:riseIn 1.2s 1s cubic-bezier(0.22,1,0.36,1) forwards;
+}
+.ho-line { width:28px; height:0.5px; background:rgba(201,168,76,0.28); }
+.ho-text { font-family:'Montserrat',sans-serif; font-size:9px; letter-spacing:0.36em; color:rgba(201,168,76,0.4); text-transform:uppercase; }
+.hero-scroll {
+  position:absolute; bottom:32px; left:50%; transform:translateX(-50%);
+  display:flex; flex-direction:column; align-items:center; gap:7px;
+  opacity:0; animation:fadeIn 1s 1.8s forwards;
+}
+.hs-lbl   { font-family:'Montserrat',sans-serif; font-size:7px; letter-spacing:0.34em; color:rgba(201,168,76,0.28); text-transform:uppercase; }
+.hs-track { width:1px; height:44px; background:rgba(201,168,76,0.12); position:relative; overflow:hidden; }
+.hs-thumb { position:absolute; top:-100%; width:100%; height:100%; background:linear-gradient(180deg,transparent,var(--gf),transparent); animation:drop 2.4s ease-in-out infinite; }
+@keyframes drop    { 0%{top:-100%} 100%{top:100%} }
+@keyframes riseIn  { from{opacity:0;transform:translateY(26px)} to{opacity:1;transform:translateY(0)} }
+@keyframes fadeIn  { from{opacity:0} to{opacity:1} }
+
+/* ── ABOUT ── */
+.about { background:var(--cr); padding:100px 60px; position:relative; }
+.about::before { content:''; position:absolute; top:0; left:60px; right:60px; height:0.5px; background:linear-gradient(90deg,transparent,rgba(201,168,76,0.2) 30%,rgba(201,168,76,0.2) 70%,transparent); }
+.about-inner { max-width:820px; margin:0 auto; text-align:center; }
+.eyebrow { font-family:'Montserrat',sans-serif; font-size:9px; letter-spacing:0.38em; text-transform:uppercase; color:rgba(201,168,76,0.5); font-weight:500; margin-bottom:18px; }
+.about-headline { font-family:'Cinzel',serif; font-size:clamp(22px,3.8vw,40px); font-weight:500; color:var(--gf); letter-spacing:0.07em; line-height:1.3; margin-bottom:24px; }
+.about-rule { display:flex; align-items:center; gap:12px; margin:0 auto 28px; width:180px; }
+.ar-l { flex:1; height:0.5px; background:rgba(201,168,76,0.25); }
+.ar-d { width:6px; height:6px; background:rgba(201,168,76,0.4); transform:rotate(45deg); flex-shrink:0; }
+.about-body { font-family:'Cormorant Garamond',serif; font-size:clamp(17px,1.9vw,21px); color:rgba(245,233,192,0.6); line-height:1.95; max-width:660px; margin:0 auto; letter-spacing:0.02em; }
+
+/* ── PILLARS ── */
+.pillars { background:var(--cr-d); padding:96px 60px; position:relative; }
+.pillars::before { content:''; position:absolute; inset:16px; border:0.5px solid rgba(201,168,76,0.12); pointer-events:none; }
+.pillars-inner { max-width:1000px; margin:0 auto; }
+.pillars-head { text-align:center; margin-bottom:56px; }
+.pillars-eyebrow { font-family:'Montserrat',sans-serif; font-size:9px; letter-spacing:0.38em; text-transform:uppercase; color:rgba(201,168,76,0.45); font-weight:500; margin-bottom:14px; }
+.pillars-title { font-family:'Cinzel',serif; font-size:clamp(20px,3.2vw,34px); font-weight:500; color:var(--gf); letter-spacing:0.08em; line-height:1.3; }
+.pillars-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:rgba(201,168,76,0.1); }
+.pillar { background:var(--cr-d); padding:40px 34px; position:relative; transition:background 0.35s; }
+.pillar:hover { background:var(--cr); }
+.pillar::before { content:''; position:absolute; top:0;left:0;right:100%; height:1.5px; background:var(--gf); transition:right 0.4s ease; }
+.pillar:hover::before { right:0; }
+.pillar-num   { font-family:'Cinzel',serif; font-size:10px; color:rgba(201,168,76,0.22); letter-spacing:0.14em; margin-bottom:16px; }
+.pillar-title { font-family:'Cinzel',serif; font-size:13px; font-weight:600; color:var(--gf); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:12px; line-height:1.45; }
+.pillar-body  { font-family:'Cormorant Garamond',serif; font-size:15px; color:rgba(245,233,192,0.5); line-height:1.85; }
+
+/* ── CONTACT ── */
+.contact { background:var(--cr); padding:100px 60px; position:relative; }
+.contact::before { content:''; position:absolute; top:0; left:60px; right:60px; height:0.5px; background:linear-gradient(90deg,transparent,rgba(201,168,76,0.2) 30%,rgba(201,168,76,0.2) 70%,transparent); }
+.contact-inner { max-width:680px; margin:0 auto; display:flex; flex-direction:column; align-items:center; }
+.contact-head { text-align:center; margin-bottom:52px; }
+.contact-headline { font-family:'Cinzel',serif; font-size:clamp(20px,3.5vw,36px); font-weight:500; color:var(--gf); letter-spacing:0.08em; line-height:1.3; margin-bottom:14px; }
+.contact-sub { font-family:'Cormorant Garamond',serif; font-size:17px; font-style:italic; color:rgba(245,233,192,0.5); line-height:1.75; max-width:480px; }
+
+/* form fields */
+.contact-form { width:100%; display:flex; flex-direction:column; gap:22px; }
+.form-row     { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.field        { display:flex; flex-direction:column; gap:8px; }
+.field-label  { font-family:'Montserrat',sans-serif; font-size:8px; letter-spacing:0.26em; text-transform:uppercase; color:rgba(201,168,76,0.6); font-weight:600; }
+.field-input, .field-select, .field-textarea {
+  font-family:'Cormorant Garamond',serif; font-size:16px;
+  color:var(--gp); background:transparent;
+  border:none; border-bottom:1px solid rgba(201,168,76,0.25);
+  padding:10px 0; outline:none; transition:border-color 0.3s;
+  width:100%; appearance:none; -webkit-appearance:none; border-radius:0;
+}
+.field-input:focus, .field-select:focus, .field-textarea:focus { border-bottom-color:var(--gf); }
+.field-input::placeholder, .field-textarea::placeholder { color:rgba(201,168,76,0.22); font-style:italic; }
+.field-select option { background:var(--cr-d); color:var(--gp); }
+.field-textarea { resize:none; min-height:90px; }
+
+/* submit button */
+.form-submit {
+  font-family:'Cinzel',serif; font-size:10px; letter-spacing:0.24em;
+  text-transform:uppercase; color:var(--cr-d);
+  background:var(--gf); border:none;
+  padding:15px 44px; cursor:pointer;
+  transition:all 0.3s; align-self:center; margin-top:6px; font-weight:700;
+  position:relative;
+}
+.form-submit:hover:not(:disabled) { background:var(--gl); transform:translateY(-2px); }
+.form-submit:disabled { opacity:0.55; cursor:not-allowed; transform:none; }
+.form-submit.loading::after {
+  content:''; position:absolute; right:16px; top:50%; transform:translateY(-50%);
+  width:12px; height:12px;
+  border:2px solid rgba(106,0,9,0.25); border-top-color:var(--cr-d);
+  border-radius:50%; animation:spin 0.7s linear infinite;
+}
+@keyframes spin { to{transform:translateY(-50%) rotate(360deg)} }
+
+/* disclaimer */
+.form-disclaimer {
+  font-family:'Cormorant Garamond',serif; font-size:12px; font-style:italic;
+  color:rgba(245,233,192,0.22); text-align:center; margin-top:14px; line-height:1.65;
+}
+
+/* error box */
+.form-error { display:none; margin-top:16px; padding:18px 20px; background:rgba(255,255,255,0.05); border:0.5px solid rgba(201,168,76,0.2); text-align:center; }
+.form-error.show { display:block; }
+.form-error p { font-family:'Cormorant Garamond',serif; font-size:15px; font-style:italic; color:rgba(245,233,192,0.55); line-height:1.7; }
+.form-error a { color:var(--gf); }
+
+/* success state */
+.form-success { display:none; text-align:center; padding:52px 0; }
+.form-success.show { display:block; }
+.success-diam {
+  width:44px; height:44px; border:0.5px solid rgba(201,168,76,0.4);
+  transform:rotate(45deg); display:flex; align-items:center; justify-content:center;
+  margin:0 auto 24px;
+}
+.success-diam-inner { width:12px; height:12px; background:var(--gf); }
+.success-msg { font-family:'Cormorant Garamond',serif; font-size:20px; font-style:italic; color:var(--gf); line-height:1.7; }
+.success-sub { font-family:'Montserrat',sans-serif; font-size:9px; letter-spacing:0.22em; color:rgba(201,168,76,0.35); text-transform:uppercase; margin-top:14px; }
+
+/* contact detail strip */
+.cd-strip { display:flex; justify-content:center; gap:52px; margin-top:60px; padding-top:48px; border-top:0.5px solid rgba(201,168,76,0.15); flex-wrap:wrap; }
+.cd-item  { text-align:center; }
+.cd-label { font-family:'Montserrat',sans-serif; font-size:8px; letter-spacing:0.24em; text-transform:uppercase; color:rgba(201,168,76,0.45); font-weight:600; margin-bottom:7px; }
+.cd-value { font-family:'Cormorant Garamond',serif; font-size:15px; color:rgba(245,233,192,0.65); line-height:1.65; letter-spacing:0.02em; }
+
+/* ── FOOTER ── */
+footer { background:var(--cr-d); padding:40px 60px 28px; border-top:0.5px solid rgba(201,168,76,0.1); }
+.footer-inner { max-width:1000px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap; }
+.footer-mark     { font-family:'Cinzel',serif; font-size:13px; font-weight:700; color:rgba(201,168,76,0.45); letter-spacing:0.14em; }
+.footer-mark-sub { font-family:'Cinzel',serif; font-size:7px; letter-spacing:0.22em; color:rgba(201,168,76,0.22); margin-top:3px; }
+.footer-copy     { font-family:'Montserrat',sans-serif; font-size:8.5px; letter-spacing:0.1em; color:rgba(201,168,76,0.22); text-transform:uppercase; }
+.footer-disc     { font-family:'Cormorant Garamond',serif; font-size:11px; font-style:italic; color:rgba(245,233,192,0.16); max-width:380px; line-height:1.6; text-align:right; }
+
+/* ── REVEAL ── */
+.reveal { opacity:0; transform:translateY(26px); transition:opacity 0.9s ease,transform 0.9s ease; }
+.reveal.visible { opacity:1; transform:translateY(0); }
+.r1{transition-delay:.1s} .r2{transition-delay:.2s} .r3{transition-delay:.3s} .r4{transition-delay:.4s}
+
+/* ── RESPONSIVE ── */
+@media(max-width:768px){
+  nav { padding:0 24px; }
+  .hero,.about,.pillars,.contact { padding:72px 24px; }
+  .v-line-l,.v-line-r { display:none; }
+  .pillars-grid { grid-template-columns:1fr; }
+  .form-row { grid-template-columns:1fr; }
+  .cd-strip { gap:28px; }
+  footer { padding:32px 24px 24px; }
+  .footer-inner { flex-direction:column; align-items:flex-start; }
+  .footer-disc { text-align:left; }
+  .pillars::before { inset:12px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#top" class="nav-logo">
+    <div class="nav-wm">AMBRAY</div>
+    <div class="nav-r"><div class="nav-rl"></div><div class="nav-rd"></div><div class="nav-rl"></div></div>
+    <div class="nav-s">Law &amp; Advisory</div>
+  </a>
+  <a href="#contact" class="nav-cta">Contact Us</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="rings"><div class="ring"></div><div class="ring"></div><div class="ring"></div><div class="ring"></div></div>
+  <div class="v-line v-line-l"></div>
+  <div class="v-line v-line-r"></div>
+  <div class="hero-content">
+    <div class="hero-ambray">AMBRAY</div>
+    <div class="hero-div"><div class="hd-l"></div><div class="hd-d"></div><div class="hd-l"></div></div>
+    <div class="hero-sub">Law &amp; Advisory</div>
+    <div class="hero-opening">
+      <div class="ho-line"></div>
+      <div class="ho-text">Opening Soon &nbsp;·&nbsp; Alabang, Muntinlupa</div>
+      <div class="ho-line"></div>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="hs-lbl">Scroll</div>
+    <div class="hs-track"><div class="hs-thumb"></div></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-inner">
+    <div class="eyebrow reveal">The Firm</div>
+    <h2 class="about-headline reveal r1">Full-Service Legal Counsel.<br>One Firm. Every Matter.</h2>
+    <div class="about-rule reveal r2"><div class="ar-l"></div><div class="ar-d"></div><div class="ar-l"></div></div>
+    <p class="about-body reveal r2">Ambray Law &amp; Advisory is a full-service legal and advisory practice serving individuals, corporations, and institutions across the Philippines. We bring specialist depth to every matter — whether a single contract or a complex multi-party dispute — and we treat every engagement with the same standard of rigor and discretion.</p>
+  </div>
+</section>
+
+<!-- PILLARS -->
+<section class="pillars" id="practice">
+  <div class="pillars-inner">
+    <div class="pillars-head reveal">
+      <div class="pillars-eyebrow">Practice Areas</div>
+      <h2 class="pillars-title">Where We Practice</h2>
+    </div>
+    <div class="pillars-grid">
+      <div class="pillar reveal r1">
+        <div class="pillar-num">01</div>
+        <div class="pillar-title">Corporate &amp; Commercial Law</div>
+        <div class="pillar-body">Company formation, mergers and acquisitions, shareholders' agreements, commercial contracts, joint ventures, and cross-border transactions. We structure deals that hold.</div>
+      </div>
+      <div class="pillar reveal r2">
+        <div class="pillar-num">02</div>
+        <div class="pillar-title">Litigation &amp; Dispute Resolution</div>
+        <div class="pillar-body">Civil and criminal litigation at all levels of the Philippine courts, plus arbitration and mediation. We come prepared and we advocate without reservation.</div>
+      </div>
+      <div class="pillar reveal r3">
+        <div class="pillar-num">03</div>
+        <div class="pillar-title">Taxation &amp; Tax Advisory</div>
+        <div class="pillar-body">BIR assessments, tax planning, transfer pricing, estate advisory, and VAT compliance. We resolve tax exposure before it becomes a liability.</div>
+      </div>
+      <div class="pillar reveal r4">
+        <div class="pillar-num">04</div>
+        <div class="pillar-title">Regulatory &amp; Compliance Advisory</div>
+        <div class="pillar-body">SEC, BSP, and industry-specific filings, data privacy compliance, anti-money laundering protocols, and corporate governance frameworks for regulated entities.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div class="contact-head reveal">
+      <div class="eyebrow" style="margin-bottom:14px">Get in Touch</div>
+      <h2 class="contact-headline">Tell Us About<br>Your Matter</h2>
+      <p class="contact-sub" style="margin-top:14px">All inquiries are confidential. We will respond within one business day.</p>
+    </div>
+
+    <form class="contact-form reveal r1" id="contactForm">
+      <div class="form-row">
+        <div class="field">
+          <label class="field-label">First Name</label>
+          <input class="field-input" type="text" id="first_name" placeholder="Given name" required>
+        </div>
+        <div class="field">
+          <label class="field-label">Last Name</label>
+          <input class="field-input" type="text" id="last_name" placeholder="Family name" required>
+        </div>
+      </div>
+      <div class="field">
+        <label class="field-label">Email Address</label>
+        <input class="field-input" type="email" id="email" placeholder="your@email.com" required>
+      </div>
+      <div class="field">
+        <label class="field-label">Contact Number</label>
+        <input class="field-input" type="tel" id="phone" placeholder="+63">
+      </div>
+      <div class="field">
+        <label class="field-label">Nature of Matter</label>
+        <select class="field-select field-input" id="matter_type">
+          <option value="">Select a practice area</option>
+          <option>Corporate &amp; Commercial Law</option>
+          <option>Litigation &amp; Dispute Resolution</option>
+          <option>Taxation &amp; Tax Advisory</option>
+          <option>Regulatory &amp; Compliance Advisory</option>
+          <option>Labor &amp; Employment</option>
+          <option>Real Estate &amp; Property</option>
+          <option>Intellectual Property</option>
+          <option>Family Law</option>
+          <option>Other Legal Matter</option>
+        </select>
+      </div>
+      <div class="field">
+        <label class="field-label">Brief Description</label>
+        <textarea class="field-textarea" id="message" placeholder="Describe your matter. All information is strictly confidential."></textarea>
+      </div>
+      <button type="submit" class="form-submit" id="submitBtn">Submit Inquiry</button>
+      <p class="form-disclaimer">Submitting this form does not create an attorney-client relationship. All information shared is held in strict confidence.</p>
+    </form>
+
+    <!-- Error fallback -->
+    <div class="form-error" id="formError">
+      <p>We were unable to send your inquiry at this time. Please email us directly at <a href="mailto:counsel@ambraylaw.com">counsel@ambraylaw.com</a> or call +63 2 8888 0000.</p>
+    </div>
+
+    <!-- Success state -->
+    <div class="form-success" id="formSuccess">
+      <div class="success-diam"><div class="success-diam-inner"></div></div>
+      <p class="success-msg">Thank you — your inquiry has been received.<br>We will be in touch within one business day.</p>
+      <p class="success-sub">Ambray Law &amp; Advisory</p>
+    </div>
+
+    <!-- Contact details -->
+    <div class="cd-strip reveal r2">
+      <div class="cd-item">
+        <div class="cd-label">Telephone</div>
+        <div class="cd-value">+63 2 8888 0000</div>
+      </div>
+      <div class="cd-item">
+        <div class="cd-label">Email</div>
+        <div class="cd-value">counsel@ambraylaw.com</div>
+      </div>
+      <div class="cd-item">
+        <div class="cd-label">Office</div>
+        <div class="cd-value">17th Floor, Tower 2<br>Insular Life Corporate Centre<br>Insular Drive, Alabang, Muntinlupa</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-mark">AMBRAY</div>
+      <div class="footer-mark-sub">Law &amp; Advisory &nbsp;·&nbsp; CPA Lawyers</div>
+    </div>
+    <div class="footer-copy">&copy; 2026 Ambray Law &amp; Advisory. All Rights Reserved.</div>
+    <div class="footer-disc">The contents of this website are for informational purposes only and do not constitute legal advice. No attorney-client relationship is formed by accessing this website.</div>
+  </div>
+</footer>
+
+<script>
+/* ══════════════════════════════════════════════════════
+   EMAILJS CONFIGURATION
+   Replace the values below with your credentials from
+   emailjs.com → Account (Public Key) and your
+   Service ID and both Template IDs
+══════════════════════════════════════════════════════ */
+const EMAILJS_PUBLIC_KEY        = 'YOUR_PUBLIC_KEY';
+const EMAILJS_SERVICE_ID        = 'YOUR_SERVICE_ID';
+const EMAILJS_TEMPLATE_FIRM     = 'YOUR_TEMPLATE_ID_1';  // Template 1 — firm notification
+const EMAILJS_TEMPLATE_CLIENT   = 'YOUR_TEMPLATE_ID_2';  // Template 2 — client confirmation
+
+/* init EmailJS */
+emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+
+/* nav scroll */
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 40);
+});
+
+/* scroll reveal */
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+/* ── FORM SUBMIT ── */
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+
+  const btn      = document.getElementById('submitBtn');
+  const errorBox = document.getElementById('formError');
+  const success  = document.getElementById('formSuccess');
+
+  /* loading state */
+  btn.disabled = true;
+  btn.classList.add('loading');
+  btn.textContent = 'Sending';
+  errorBox.classList.remove('show');
+
+  /* collect data — field IDs match the {{variables}} in your EmailJS templates */
+  const params = {
+    first_name:  document.getElementById('first_name').value.trim(),
+    last_name:   document.getElementById('last_name').value.trim(),
+    email:       document.getElementById('email').value.trim(),
+    phone:       document.getElementById('phone').value.trim() || 'Not provided',
+    matter_type: document.getElementById('matter_type').value  || 'Not specified',
+    message:     document.getElementById('message').value.trim() || 'No description provided',
+    submitted:   new Date().toLocaleString('en-PH', {
+                   timeZone:'Asia/Manila',
+                   dateStyle:'full',
+                   timeStyle:'short'
+                 }),
+  };
+
+  try {
+    /* 1. Send internal notification to the firm */
+    await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_FIRM, params);
+
+    /* 2. Send confirmation email to the client */
+    await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_CLIENT, params);
+
+    /* show success */
+    this.style.display = 'none';
+    success.classList.add('show');
+
+  } catch (err) {
+    console.error('EmailJS error:', err);
+    btn.disabled = false;
+    btn.classList.remove('loading');
+    btn.textContent = 'Submit Inquiry';
+    errorBox.classList.add('show');
+  }
+});
+</script>
+</body>
+</html>
