@@ -6,7 +6,6 @@
 <title>Ambray Law &amp; Advisory — CPA Lawyers, Alabang</title>
 <meta name="description" content="Ambray Law & Advisory is a full-service boutique legal practice in Alabang, Muntinlupa. Corporate law, litigation, tax advisory, and regulatory compliance.">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <style>
 
 :root {
@@ -16,23 +15,22 @@
   --cream: #fdfaf5;
   --ivory: #ffffff;
   --parch: #f7f1e3;
-  --body:  #7a6e64;
-  --muted: #b0a496;
-  --light: #f0ebe2;
+  --body:  #4a3f38;
+  --muted: #7a6a60;
 }
 
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
   font-family: 'Cormorant Garamond', serif;
-  background: var(--cream);
+  background-color: var(--cream);
+  background-image: url('cream-texture.png');
+  background-repeat: repeat;
+  background-size: 600px 600px;
   color: var(--body);
-  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
 ::selection { background: var(--cr); color: #fff; }
-::-webkit-scrollbar { width: 3px; }
-::-webkit-scrollbar-thumb { background: var(--gf); }
 
 /* ── NAV ── */
 nav {
@@ -44,68 +42,40 @@ nav {
   align-items: center;
   justify-content: space-between;
   padding: 0 52px;
-  background: rgba(253, 250, 245, 0.96);
+  background-color: rgba(253, 250, 245, 0.97);
+  background-image: url('cream-texture.png');
+  background-repeat: repeat;
+  background-size: 600px 600px;
   backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(201, 168, 76, 0.14);
-  transition: box-shadow 0.3s;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.2);
 }
-nav.scrolled { box-shadow: 0 2px 24px rgba(123, 14, 23, 0.05); }
 
 .nav-logo {
-  font-family: 'Cinzel', serif;
-  font-size: 15px;
-  font-weight: 700;
-  color: var(--cr);
-  letter-spacing: 0.18em;
   text-decoration: none;
-}
-
-.nav-links {
   display: flex;
   align-items: center;
-  gap: 32px;
 }
-.nav-links a {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 8.5px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--body);
-  text-decoration: none;
-  transition: color 0.2s;
+.nav-logo img {
+  height: 36px;
+  width: auto;
+  display: block;
 }
-.nav-links a:hover { color: var(--cr); }
 
-.nav-cta {
+.nav-contact {
   font-family: 'Montserrat', sans-serif;
-  font-size: 8.5px;
+  font-size: 9px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--cr) !important;
-  border: 1px solid rgba(123, 14, 23, 0.25);
+  color: var(--cr);
+  border: 1px solid rgba(123, 14, 23, 0.3);
   padding: 9px 22px;
   text-decoration: none;
   transition: all 0.25s;
+  font-weight: 500;
 }
-.nav-cta:hover {
+.nav-contact:hover {
   background: var(--cr);
-  color: #fff !important;
-}
-
-.hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-  background: none;
-  border: none;
-  padding: 4px;
-}
-.hamburger span {
-  display: block;
-  width: 22px;
-  height: 1px;
-  background: var(--cr);
+  color: #fff;
 }
 
 /* ── HERO ── */
@@ -115,9 +85,12 @@ nav.scrolled { box-shadow: 0 2px 24px rgba(123, 14, 23, 0.05); }
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 100px 40px 80px;
-  background: var(--cream);
   text-align: center;
+  padding: 100px 40px 80px;
+  background-color: var(--cream);
+  background-image: url('cream-texture.png');
+  background-repeat: repeat;
+  background-size: 600px 600px;
   position: relative;
 }
 
@@ -129,44 +102,19 @@ nav.scrolled { box-shadow: 0 2px 24px rgba(123, 14, 23, 0.05); }
 }
 
 .hero-logo {
-  width: min(480px, 82vw);
-  margin: 0 auto 44px;
+  width: min(440px, 80vw);
+  margin: 0 auto 52px;
   display: block;
-}
-
-.hero-divider {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  margin: 0 auto 40px;
-  max-width: 320px;
-  width: 100%;
-}
-.hd-line {
-  flex: 1;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(201,168,76,0.55));
-}
-.hd-line.r {
-  background: linear-gradient(90deg, rgba(201,168,76,0.55), transparent);
-}
-.hd-gem {
-  width: 9px; height: 9px;
-  background: var(--gf);
-  transform: rotate(45deg);
-  flex-shrink: 0;
-  opacity: 0.7;
 }
 
 .hero-headline {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(26px, 3.2vw, 44px);
-  font-weight: 400;
+  font-size: clamp(26px, 3.2vw, 42px);
+  font-weight: 500;
   color: var(--cr);
   line-height: 1.35;
-  max-width: 620px;
+  max-width: 600px;
   margin: 0 auto 20px;
-  letter-spacing: 0.01em;
 }
 
 .hero-sub {
@@ -178,15 +126,7 @@ nav.scrolled { box-shadow: 0 2px 24px rgba(123, 14, 23, 0.05); }
   margin: 0 auto 44px;
 }
 
-.hero-btns {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.btn-fill {
+.hero-btn {
   font-family: 'Montserrat', sans-serif;
   font-size: 9px;
   letter-spacing: 0.18em;
@@ -197,36 +137,34 @@ nav.scrolled { box-shadow: 0 2px 24px rgba(123, 14, 23, 0.05); }
   text-decoration: none;
   transition: all 0.25s;
   display: inline-block;
+  font-weight: 500;
 }
-.btn-fill:hover {
-  background: var(--cr-d);
-  box-shadow: 0 6px 20px rgba(123,14,23,0.18);
-}
-
-.btn-outline {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 9px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--cr);
-  border: 1px solid rgba(123,14,23,0.22);
-  padding: 13px 32px;
-  text-decoration: none;
-  transition: all 0.25s;
-  display: inline-block;
-}
-.btn-outline:hover { background: rgba(123,14,23,0.04); }
+.hero-btn:hover { background: var(--cr-d); }
 
 /* ── SECTION SHARED ── */
-.wrap { max-width: 1060px; margin: 0 auto; }
+.section {
+  padding: 88px 52px;
+}
+.section.alt { background: var(--ivory); }
+.section.parch {
+  background-color: var(--parch);
+  background-image: url('cream-texture.png');
+  background-repeat: repeat;
+  background-size: 600px 600px;
+}
+
+.wrap { max-width: 800px; margin: 0 auto; }
+.wrap-wide { max-width: 1000px; margin: 0 auto; }
 
 .sec-tag {
   font-family: 'Montserrat', sans-serif;
-  font-size: 8px;
+  font-size: 8.5px;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: var(--gf);
-  margin-bottom: 14px;
+  color: var(--cr);
+  margin-bottom: 12px;
+  font-weight: 600;
+  opacity: 0.65;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -235,206 +173,60 @@ nav.scrolled { box-shadow: 0 2px 24px rgba(123, 14, 23, 0.05); }
   content: '';
   display: block;
   width: 18px; height: 1px;
-  background: var(--gf);
+  background: var(--cr);
+  opacity: 0.5;
 }
 
 .sec-title {
   font-family: 'Cinzel', serif;
-  font-size: clamp(22px, 2.6vw, 32px);
-  font-weight: 500;
+  font-size: clamp(20px, 2.4vw, 28px);
+  font-weight: 600;
   color: var(--cr);
   letter-spacing: 0.07em;
   line-height: 1.3;
-  margin-bottom: 20px;
+  margin-bottom: 14px;
 }
 
-.gold-rule {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+.gold-line {
+  width: 40px; height: 2px;
+  background: var(--gf);
+  opacity: 0.7;
   margin-bottom: 28px;
 }
-.gr-line {
-  width: 160px; height: 0.5px;
-  background: rgba(201,168,76,0.3);
-}
-.gr-gem {
-  width: 6px; height: 6px;
-  background: rgba(201,168,76,0.45);
-  transform: rotate(45deg);
-  flex-shrink: 0;
+
+.body-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 19px;
+  color: var(--body);
+  line-height: 2;
+  margin-bottom: 20px;
 }
 
 /* ── ABOUT ── */
-.about {
-  padding: 104px 52px;
-  background: var(--ivory);
-}
-
 .about-grid {
   display: grid;
-  grid-template-columns: 1fr 1.5fr;
-  gap: 80px;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 72px;
   align-items: start;
 }
-
+.about-logo {
+  width: 100%;
+  max-width: 220px;
+  margin-bottom: 32px;
+  display: block;
+}
 .about-sticky { position: sticky; top: 84px; }
 
-.about-lead {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 21px;
-  color: #3d3028;
-  line-height: 1.82;
-  margin-bottom: 22px;
-  font-weight: 400;
-}
-
-.about-body {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 18px;
-  color: var(--body);
-  line-height: 2;
-  margin-bottom: 20px;
-}
-
-.about-pull {
-  padding: 26px 30px;
-  background: var(--parch);
+.pull-quote {
+  padding: 24px 28px;
+  background-color: var(--parch);
+  background-image: url('cream-texture.png');
+  background-repeat: repeat;
+  background-size: 600px 600px;
   border-left: 2px solid var(--gf);
-  margin: 32px 0;
+  margin: 28px 0;
 }
-.about-pull p {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 19px;
-  font-style: italic;
-  color: var(--cr);
-  line-height: 1.75;
-}
-
-.partners {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;
-  margin-top: 32px;
-}
-.partner {
-  padding: 22px;
-  background: var(--cream);
-  border: 0.5px solid rgba(201,168,76,0.18);
-  border-top: 2px solid rgba(123,14,23,0.18);
-}
-.partner-name {
-  font-family: 'Cinzel', serif;
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--cr);
-  letter-spacing: 0.07em;
-  margin-bottom: 3px;
-}
-.partner-role {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 14px;
-  font-style: italic;
-  color: var(--muted);
-  margin-bottom: 9px;
-}
-.partner-desc {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 14px;
-  color: var(--body);
-  line-height: 1.75;
-}
-
-/* ── DIAMOND STANDARD ── */
-.diamond {
-  padding: 104px 52px;
-  background: var(--cream);
-  border-top: 1px solid rgba(201,168,76,0.14);
-  border-bottom: 1px solid rgba(201,168,76,0.14);
-}
-
-.diamond-top {
-  display: grid;
-  grid-template-columns: 1fr 1.3fr;
-  gap: 72px;
-  align-items: center;
-  margin-bottom: 60px;
-}
-
-.diamond-intro {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 18px;
-  color: var(--body);
-  line-height: 2;
-}
-
-/* Four cards — light and airy */
-.diamond-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1px;
-  background: rgba(201,168,76,0.1);
-}
-
-.d-card {
-  background: var(--ivory);
-  padding: 36px 28px;
-  position: relative;
-  transition: background 0.3s;
-}
-.d-card:hover { background: var(--cream); }
-
-.d-bar {
-  position: absolute;
-  top: 0; left: 0;
-  width: 0; height: 2px;
-  background: linear-gradient(90deg, var(--cr), var(--gf));
-  transition: width 0.4s ease;
-}
-.d-card:hover .d-bar { width: 100%; }
-
-.d-gem {
-  width: 8px; height: 8px;
-  background: var(--gf);
-  transform: rotate(45deg);
-  opacity: 0.45;
-  margin-bottom: 16px;
-}
-
-.d-name {
-  font-family: 'Cinzel', serif;
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--cr);
-  letter-spacing: 0.1em;
-  margin-bottom: 10px;
-}
-
-.d-desc {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 15px;
-  color: var(--body);
-  line-height: 1.85;
-}
-
-/* Bottom statement */
-.diamond-statement {
-  margin-top: 48px;
-  padding: 36px 44px;
-  background: var(--parch);
-  border-left: 2px solid var(--gf);
-  display: flex;
-  align-items: center;
-  gap: 32px;
-}
-.ds-gem {
-  width: 36px; height: 36px;
-  background: var(--gf);
-  transform: rotate(45deg);
-  flex-shrink: 0;
-  opacity: 0.45;
-}
-.ds-text {
+.pull-quote p {
   font-family: 'Cormorant Garamond', serif;
   font-size: 19px;
   font-style: italic;
@@ -443,376 +235,226 @@ nav.scrolled { box-shadow: 0 2px 24px rgba(123, 14, 23, 0.05); }
 }
 
 /* ── PRACTICE AREAS ── */
-.practice {
-  padding: 104px 52px;
-  background: var(--ivory);
-}
-
-.practice-top {
-  display: grid;
-  grid-template-columns: 1fr 1.3fr;
-  gap: 60px;
-  align-items: end;
-  margin-bottom: 48px;
-}
-.practice-intro {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 18px;
-  color: var(--body);
-  line-height: 1.95;
-}
-
-.areas {
+.practice-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1px;
-  background: rgba(201,168,76,0.1);
+  background: rgba(201,168,76,0.12);
+  margin-top: 40px;
 }
-.area {
+.practice-item {
   background: var(--ivory);
-  padding: 40px 36px;
+  padding: 36px 32px;
   position: relative;
   transition: background 0.3s;
 }
-.area:hover { background: var(--cream); }
-.area-bar {
+.practice-item:hover { background: var(--cream); }
+.practice-bar {
   position: absolute;
   top: 0; left: 0;
   width: 0; height: 2px;
   background: linear-gradient(90deg, var(--cr), var(--gf));
   transition: width 0.4s ease;
 }
-.area:hover .area-bar { width: 100%; }
-
-.area-num {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 40px;
-  font-weight: 300;
-  color: rgba(201,168,76,0.15);
-  line-height: 1;
-  margin-bottom: 16px;
+.practice-item:hover .practice-bar { width: 100%; }
+.practice-num {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  color: var(--gf);
+  font-weight: 600;
+  margin-bottom: 10px;
+  opacity: 0.8;
 }
-.area-name {
+.practice-name {
+  font-family: 'Cinzel', serif;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--cr);
+  letter-spacing: 0.07em;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+.practice-desc {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+  color: var(--body);
+  line-height: 1.85;
+}
+
+/* ── TEAM ── */
+.team-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 40px;
+}
+.team-card {
+  padding: 28px;
+  background: var(--cream);
+  border: 0.5px solid rgba(201,168,76,0.22);
+  border-top: 2px solid var(--cr);
+}
+.team-name {
   font-family: 'Cinzel', serif;
   font-size: 13px;
   font-weight: 600;
   color: var(--cr);
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-  margin-bottom: 12px;
-  line-height: 1.4;
-}
-.area-desc {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 16px;
-  color: var(--body);
-  line-height: 1.9;
-  margin-bottom: 16px;
-}
-.area-list {
-  list-style: none;
-  border-top: 0.5px solid rgba(201,168,76,0.16);
-  padding-top: 14px;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-.area-list li {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 14px;
-  color: var(--muted);
-  padding-left: 14px;
-  position: relative;
-  line-height: 1.6;
-}
-.area-list li::before {
-  content: '';
-  position: absolute;
-  left: 0; top: 9px;
-  width: 5px; height: 1px;
-  background: var(--gf);
-}
-
-/* ── WHY ── */
-.why {
-  padding: 104px 52px;
-  background: var(--cr);
-}
-.why-title {
-  font-family: 'Cinzel', serif;
-  font-size: clamp(22px, 2.6vw, 32px);
-  font-weight: 500;
-  color: rgba(212,175,55,0.75);
   letter-spacing: 0.07em;
-  line-height: 1.3;
-  max-width: 500px;
-  margin-bottom: 60px;
+  margin-bottom: 4px;
 }
-.why-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-}
-.why-item {
-  border-top: 0.5px solid rgba(201,168,76,0.18);
-  padding-top: 26px;
-}
-.why-gem {
-  width: 7px; height: 7px;
-  background: var(--gf);
-  transform: rotate(45deg);
-  opacity: 0.4;
-  margin-bottom: 16px;
-}
-.why-name {
-  font-family: 'Cinzel', serif;
-  font-size: 12px;
-  font-weight: 600;
-  color: rgba(212,175,55,0.7);
-  letter-spacing: 0.09em;
+.team-role {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 8px;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  margin-bottom: 10px;
+  color: var(--muted);
+  margin-bottom: 12px;
+  font-weight: 500;
 }
-.why-desc {
+.team-desc {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 16px;
-  color: rgba(245,233,192,0.42);
-  line-height: 1.9;
+  font-size: 15px;
+  color: var(--body);
+  line-height: 1.8;
 }
 
 /* ── CONTACT ── */
-.contact {
-  padding: 104px 52px;
-  background: var(--cream);
-}
 .contact-grid {
   display: grid;
-  grid-template-columns: 1fr 1.3fr;
-  gap: 80px;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
   align-items: start;
 }
-.contact-sticky { position: sticky; top: 84px; }
-
-.contact-title {
-  font-family: 'Cinzel', serif;
-  font-size: clamp(22px, 2.6vw, 32px);
-  font-weight: 500;
-  color: var(--cr);
-  letter-spacing: 0.07em;
-  line-height: 1.3;
-  margin-bottom: 16px;
+.contact-logo {
+  width: 100%;
+  max-width: 180px;
+  margin-bottom: 28px;
+  display: block;
 }
-.contact-note {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 18px;
-  font-style: italic;
-  color: var(--body);
-  line-height: 1.85;
-  margin-bottom: 40px;
-}
-.contact-details { display: flex; flex-direction: column; gap: 18px; }
-.cd { display: flex; flex-direction: column; gap: 3px; }
+.cd-group { display: flex; flex-direction: column; gap: 20px; }
+.cd { display: flex; flex-direction: column; gap: 4px; }
 .cd-label {
   font-family: 'Montserrat', sans-serif;
-  font-size: 7.5px;
+  font-size: 8px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--gf);
-  opacity: 0.85;
+  color: var(--cr);
+  font-weight: 600;
+  opacity: 0.6;
 }
 .cd-val {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 17px;
+  font-size: 18px;
   color: var(--body);
   line-height: 1.6;
 }
 .cd-val a { color: inherit; text-decoration: none; transition: color 0.2s; }
 .cd-val a:hover { color: var(--cr); }
-.cd-sep { height: 0.5px; background: rgba(201,168,76,0.16); margin: 2px 0; }
+.cd-sep { height: 0.5px; background: rgba(201,168,76,0.2); }
 
-/* Form */
-.form { display: flex; flex-direction: column; gap: 20px; }
-.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-.field { display: flex; flex-direction: column; gap: 7px; }
-.field label {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 7.5px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
+/* ── CAREERS ── */
+.careers-box {
+  background-color: var(--parch);
+  background-image: url('cream-texture.png');
+  background-repeat: repeat;
+  background-size: 600px 600px;
+  border: 0.5px solid rgba(201,168,76,0.25);
+  border-top: 2px solid var(--gf);
+  padding: 40px 44px;
+  text-align: center;
+}
+.careers-title {
+  font-family: 'Cinzel', serif;
+  font-size: 16px;
+  font-weight: 600;
   color: var(--cr);
-  opacity: 0.6;
+  letter-spacing: 0.1em;
+  margin-bottom: 14px;
 }
-.field input,
-.field select,
-.field textarea {
+.careers-body {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 17px;
-  color: #3a2e28;
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid rgba(123,14,23,0.12);
-  padding: 9px 0;
-  outline: none;
-  transition: border-color 0.25s;
-  width: 100%;
-  appearance: none;
-  -webkit-appearance: none;
-  border-radius: 0;
+  font-size: 18px;
+  color: var(--body);
+  line-height: 1.85;
+  max-width: 560px;
+  margin: 0 auto 24px;
 }
-.field input:focus,
-.field select:focus,
-.field textarea:focus { border-bottom-color: var(--cr); }
-.field input::placeholder,
-.field textarea::placeholder {
-  color: rgba(123,14,23,0.16);
-  font-style: italic;
-}
-.field textarea { resize: none; min-height: 88px; }
-
-.form-note {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 13px;
-  font-style: italic;
-  color: rgba(123,14,23,0.25);
-  line-height: 1.65;
-}
-.form-btn {
+.careers-email {
   font-family: 'Montserrat', sans-serif;
   font-size: 9px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #fff;
-  background: var(--cr);
-  border: none;
-  padding: 14px 40px;
-  cursor: pointer;
-  transition: all 0.25s;
-  align-self: flex-start;
-  position: relative;
-}
-.form-btn:hover:not(:disabled) {
-  background: var(--cr-d);
-  box-shadow: 0 6px 20px rgba(123,14,23,0.18);
-}
-.form-btn:disabled { opacity: 0.4; cursor: not-allowed; }
-.form-btn.sending::after {
-  content: '';
-  position: absolute;
-  right: 14px; top: 50%;
-  transform: translateY(-50%);
-  width: 10px; height: 10px;
-  border: 1.5px solid rgba(255,255,255,0.3);
-  border-top-color: #fff;
-  border-radius: 50%;
-  animation: spin 0.7s linear infinite;
-}
-@keyframes spin { to { transform: translateY(-50%) rotate(360deg); } }
-
-.form-error {
-  display: none;
-  padding: 14px 18px;
-  background: rgba(123,14,23,0.04);
-  border: 0.5px solid rgba(123,14,23,0.1);
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 15px;
-  font-style: italic;
-  color: var(--body);
-  line-height: 1.6;
-}
-.form-error.show { display: block; }
-.form-error a { color: var(--cr); }
-
-.form-success { display: none; text-align: center; padding: 52px 0; }
-.form-success.show { display: block; }
-.success-gem {
-  width: 40px; height: 40px;
-  background: var(--gf);
-  transform: rotate(45deg);
-  margin: 0 auto 24px;
-  opacity: 0.45;
-}
-.success-title {
-  font-family: 'Cinzel', serif;
-  font-size: 16px;
-  font-weight: 500;
   color: var(--cr);
-  letter-spacing: 0.07em;
-  margin-bottom: 10px;
+  border: 1px solid rgba(123,14,23,0.28);
+  padding: 12px 28px;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.25s;
+  font-weight: 500;
 }
-.success-body {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 17px;
-  font-style: italic;
-  color: var(--body);
-  line-height: 1.75;
+.careers-email:hover {
+  background: var(--cr);
+  color: #fff;
 }
 
 /* ── FOOTER ── */
 footer {
   background: var(--cr);
-  padding: 52px 52px 34px;
+  padding: 44px 52px 28px;
   border-top: 2px solid rgba(201,168,76,0.2);
 }
-.footer-inner { max-width: 1060px; margin: 0 auto; }
-.footer-top {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  gap: 52px;
-  margin-bottom: 44px;
+.footer-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
 }
-.footer-ambray {
-  font-family: 'Cinzel', serif;
-  font-size: 18px;
-  font-weight: 700;
-  color: rgba(212,175,55,0.55);
-  letter-spacing: 0.16em;
-  margin-bottom: 6px;
-}
-.footer-div {
-  display: flex; align-items: center;
-  gap: 6px; margin-bottom: 5px; max-width: 140px;
-}
-.fdl { flex: 1; height: 0.5px; background: rgba(201,168,76,0.18); }
-.fdg { width: 4px; height: 4px; background: rgba(201,168,76,0.25); transform: rotate(45deg); flex-shrink: 0; }
-.footer-law {
-  font-family: 'Cinzel', serif;
-  font-size: 7.5px;
-  letter-spacing: 0.2em;
-  color: rgba(212,175,55,0.22);
-  text-transform: uppercase;
+.footer-logo {
+  height: 32px;
+  width: auto;
+  display: block;
+  opacity: 0.45;
+  filter: brightness(2) sepia(0.3);
+  margin-bottom: 14px;
 }
 .footer-tagline {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 15px;
+  font-size: 14px;
   font-style: italic;
-  color: rgba(245,233,192,0.22);
-  margin-top: 16px;
+  color: rgba(245,233,192,0.28);
   line-height: 1.7;
-  max-width: 280px;
+  max-width: 240px;
 }
+.footer-links-col {}
 .footer-col-title {
-  font-family: 'Cinzel', serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 8px;
-  letter-spacing: 0.18em;
-  color: rgba(212,175,55,0.32);
+  letter-spacing: 0.2em;
+  color: rgba(212,175,55,0.45);
   text-transform: uppercase;
   margin-bottom: 14px;
+  font-weight: 600;
 }
 .footer-links { list-style: none; display: flex; flex-direction: column; gap: 8px; }
 .footer-links a {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 15px;
-  color: rgba(245,233,192,0.28);
+  font-size: 16px;
+  color: rgba(245,233,192,0.32);
   text-decoration: none;
   transition: color 0.2s;
 }
 .footer-links a:hover { color: var(--gf); }
 .footer-bottom {
-  border-top: 0.5px solid rgba(201,168,76,0.08);
-  padding-top: 22px;
+  max-width: 1000px;
+  margin: 32px auto 0;
+  border-top: 0.5px solid rgba(201,168,76,0.1);
+  padding-top: 20px;
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
   gap: 20px;
   flex-wrap: wrap;
 }
@@ -820,14 +462,14 @@ footer {
   font-family: 'Montserrat', sans-serif;
   font-size: 7.5px;
   letter-spacing: 0.1em;
-  color: rgba(212,175,55,0.14);
+  color: rgba(212,175,55,0.18);
   text-transform: uppercase;
 }
 .footer-disc {
   font-family: 'Cormorant Garamond', serif;
   font-size: 12px;
   font-style: italic;
-  color: rgba(245,233,192,0.12);
+  color: rgba(245,233,192,0.15);
   max-width: 440px;
   text-align: right;
   line-height: 1.65;
@@ -836,7 +478,7 @@ footer {
 /* ── REVEAL ── */
 .reveal {
   opacity: 0;
-  transform: translateY(18px);
+  transform: translateY(16px);
   transition: opacity 0.7s ease, transform 0.7s ease;
 }
 .reveal.in { opacity: 1; transform: translateY(0); }
@@ -845,61 +487,28 @@ footer {
 .d3 { transition-delay: 0.3s; }
 
 /* ── RESPONSIVE ── */
-@media (max-width: 900px) {
+@media (max-width: 840px) {
   nav { padding: 0 22px; }
-  .nav-links { display: none; }
-  .hamburger { display: flex; }
-
-  .hero { padding: 88px 24px 64px; }
-  .hero-logo { width: min(340px, 86vw); }
-
-  .about { padding: 72px 24px; }
-  .about-grid { grid-template-columns: 1fr; gap: 40px; }
+  .section { padding: 64px 24px; }
+  .about-grid { grid-template-columns: 1fr; gap: 36px; }
   .about-sticky { position: static; }
-  .partners { grid-template-columns: 1fr; }
-
-  .diamond { padding: 72px 24px; }
-  .diamond-top { grid-template-columns: 1fr; gap: 28px; }
-  .diamond-grid { grid-template-columns: 1fr 1fr; }
-
-  .practice { padding: 72px 24px; }
-  .practice-top { grid-template-columns: 1fr; gap: 20px; }
-  .areas { grid-template-columns: 1fr; }
-
-  .why { padding: 72px 24px; }
-  .why-grid { grid-template-columns: 1fr; gap: 28px; }
-
-  .contact { padding: 72px 24px; }
+  .practice-grid { grid-template-columns: 1fr; }
+  .team-grid { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr; gap: 44px; }
-  .contact-sticky { position: static; }
-  .form-row { grid-template-columns: 1fr; }
-
-  footer { padding: 44px 24px 28px; }
-  .footer-top { grid-template-columns: 1fr; gap: 32px; }
+  footer { padding: 40px 24px 24px; }
   .footer-bottom { flex-direction: column; }
   .footer-disc { text-align: left; }
-}
-
-@media (max-width: 560px) {
-  .diamond-grid { grid-template-columns: 1fr; }
-  .hero-btns { flex-direction: column; align-items: center; }
 }
 </style>
 </head>
 <body>
 
 <!-- NAV -->
-<nav id="mainNav">
-  <a class="nav-logo" href="#top">AMBRAY</a>
-  <div class="nav-links" id="navLinks">
-    <a href="#about">The Firm</a>
-    <a href="#diamond">Our Standard</a>
-    <a href="#practice">Practice Areas</a>
-    <a href="#contact" class="nav-cta">Begin a Consultation</a>
-  </div>
-  <button class="hamburger" id="hamburger" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
+<nav>
+  <a class="nav-logo" href="#top">
+    <img src="NO BACKGROUND - Deep Crimson Font.png" alt="Ambray Law &amp; Advisory">
+  </a>
+  <a href="#contact" class="nav-contact">Get in Touch</a>
 </nav>
 
 
@@ -913,272 +522,147 @@ footer {
     alt="Ambray Law &amp; Advisory"
   >
 
-  <div class="hero-divider reveal d1">
-    <div class="hd-line"></div>
-    <div class="hd-gem"></div>
-    <div class="hd-line r"></div>
-  </div>
-
-  <h1 class="hero-headline reveal d2">
-    The law firm that treats your matter with the weight it deserves.
+  <h1 class="hero-headline reveal d1">
+    Full-service boutique legal practice in Alabang.
   </h1>
 
   <p class="hero-sub reveal d2">
-    A full-service boutique practice in Alabang built for individuals, companies, and institutions who need counsel that is precise, confidential, and genuinely invested in their outcome.
+    Serving individuals, companies, and institutions who need counsel that is precise, confidential, and genuinely invested in their outcome.
   </p>
 
-  <div class="hero-btns reveal d3">
-    <a href="#contact" class="btn-fill">Begin a Consultation</a>
-    <a href="#practice" class="btn-outline">Our Practice Areas</a>
-  </div>
+  <a href="#about" class="hero-btn reveal d3">Learn More</a>
 </section>
 
 
 <!-- ABOUT -->
-<section class="about" id="about">
-  <div class="wrap">
+<section class="section alt" id="about">
+  <div class="wrap-wide">
     <div class="about-grid">
 
       <div class="about-sticky">
+        <img class="about-logo reveal" src="NO BACKGROUND - Deep Crimson Font.png" alt="Ambray Law &amp; Advisory">
         <div class="sec-tag reveal">The Firm</div>
-        <h2 class="sec-title reveal d1">A practice built on the belief that no matter is routine.</h2>
-        <div class="gold-rule reveal d2">
-          <div class="gr-line"></div>
-          <div class="gr-gem"></div>
-        </div>
+        <h2 class="sec-title reveal d1">Who We Are</h2>
+        <div class="gold-line reveal d2"></div>
       </div>
 
       <div>
-        <p class="about-lead reveal">
-          Ambray Law &amp; Advisory was founded by lawyers who understand that the difference between good legal advice and exceptional counsel is not just knowledge. It is judgment, depth, and an unwillingness to treat any client's matter as ordinary.
+        <p class="body-text reveal">
+          Ambray Law &amp; Advisory is a boutique legal practice headquartered at the 17th Floor of the Insular Life Corporate Centre in Alabang, Muntinlupa.
         </p>
 
-        <p class="about-body reveal d1">
-          The firm is headquartered at the 17th Floor of the Insular Life Corporate Centre in Alabang, Muntinlupa. We serve individuals with significant matters, growing companies navigating complex terrain, and established institutions that require specialist counsel across multiple areas of law.
+        <p class="body-text reveal d1">
+          The firm offers full-service legal counsel across four areas of practice — corporate and commercial law, litigation and dispute resolution, taxation and tax advisory, and regulatory and compliance advisory. We serve individuals, businesses, and institutions who require sound, reliable legal guidance handled with care and confidentiality.
         </p>
 
-        <div class="about-pull reveal d2">
-          <p>We do not take on matters we cannot handle with the full weight of our attention. Every client is known, and every matter is carried.</p>
+        <div class="pull-quote reveal d2">
+          <p>Every matter accepted by the firm is handled with the same standard of attention, regardless of scale or complexity.</p>
         </div>
 
-        <p class="about-body reveal d2">
-          Both founding partners hold CPA certification alongside their legal qualifications. In matters of tax, corporate structuring, financial disputes, and regulatory compliance, this dual qualification informs how we frame problems and how we resolve them.
+        <p class="body-text reveal d2">
+          Atty. Aquino F. Ambray holds both legal qualification and CPA certification, giving the firm a practical edge in matters where law and finance are closely linked. The firm is supported by a professional team in legal operations, business development, client services, and regulatory coordination.
         </p>
-
-        <div class="partners reveal d3">
-          <div class="partner">
-            <div class="partner-name">Atty. Aquino F. Ambray, CPA</div>
-            <div class="partner-role">Managing Partner</div>
-            <div class="partner-desc">Leads the firm's legal strategy and client advisory across all practice areas, with combined expertise across corporate law, taxation, and dispute resolution.</div>
-          </div>
-          <div class="partner">
-            <div class="partner-name">Atty. Aliya Safara B. Ambray</div>
-            <div class="partner-role">Partner</div>
-            <div class="partner-desc">Manages client engagements and legal operations with a practice focused on regulatory matters, compliance advisory, and commercial transactions.</div>
-          </div>
-        </div>
       </div>
 
     </div>
-  </div>
-</section>
-
-
-<!-- DIAMOND STANDARD -->
-<section class="diamond" id="diamond">
-  <div class="wrap">
-
-    <div class="diamond-top">
-      <div>
-        <div class="sec-tag reveal">Our Standard</div>
-        <h2 class="sec-title reveal d1">The Ambray Diamond Standard</h2>
-        <div class="gold-rule reveal d2">
-          <div class="gr-line"></div>
-          <div class="gr-gem"></div>
-        </div>
-      </div>
-      <p class="diamond-intro reveal d2">
-        The gold diamond in the Ambray mark is a declaration. Four principles govern every engagement — Accuracy, Acumen, Advocacy, and Accountability — each directed toward the client at the center. This is not a values statement. It is how we practice law.
-      </p>
-    </div>
-
-    <div class="diamond-grid">
-      <div class="d-card reveal">
-        <div class="d-bar"></div>
-        <div class="d-gem"></div>
-        <div class="d-name">Accuracy</div>
-        <div class="d-desc">Precise, thorough, and grounded in the facts. We read everything, and we read it carefully. Advice built on incomplete analysis is not advice.</div>
-      </div>
-
-      <div class="d-card reveal d1">
-        <div class="d-bar"></div>
-        <div class="d-gem"></div>
-        <div class="d-name">Acumen</div>
-        <div class="d-desc">Legal knowledge combined with commercial judgment. A technically correct answer that cannot be executed is an incomplete answer.</div>
-      </div>
-
-      <div class="d-card reveal d2">
-        <div class="d-bar"></div>
-        <div class="d-gem"></div>
-        <div class="d-name">Advocacy</div>
-        <div class="d-desc">We stand for our clients with conviction and strategy. We do not hedge our positions when we should be holding them.</div>
-      </div>
-
-      <div class="d-card reveal d3">
-        <div class="d-bar"></div>
-        <div class="d-gem"></div>
-        <div class="d-name">Accountability</div>
-        <div class="d-desc">Every matter we accept is one we are fully accountable for. We own our work, we meet our commitments, and we deliver.</div>
-      </div>
-    </div>
-
-    <div class="diamond-statement reveal">
-      <div class="ds-gem"></div>
-      <div class="ds-text">
-        Four principles. One standard. Every matter entrusted to Ambray Law &amp; Advisory is measured against all four — without exception.
-      </div>
-    </div>
-
   </div>
 </section>
 
 
 <!-- PRACTICE AREAS -->
-<section class="practice" id="practice">
-  <div class="wrap">
+<section class="section" id="practice">
+  <div class="wrap-wide">
+    <div class="sec-tag reveal">Practice Areas</div>
+    <h2 class="sec-title reveal d1">What We Do</h2>
+    <div class="gold-line reveal d2"></div>
+    <p class="body-text reveal d2" style="max-width:600px">
+      Every matter is handled in-house by the firm's counsel, without referral to outside counsel.
+    </p>
 
-    <div class="practice-top">
-      <div>
-        <div class="sec-tag reveal">Practice Areas</div>
-        <h2 class="sec-title reveal d1">Four areas of practice. One standard of counsel.</h2>
-      </div>
-      <p class="practice-intro reveal d2">
-        Each area is handled in-house by lawyers who hold both legal qualification and CPA certification, without referral to outside counsel.
-      </p>
-    </div>
-
-    <div class="areas">
-      <div class="area reveal">
-        <div class="area-bar"></div>
-        <div class="area-num">01</div>
-        <div class="area-name">Corporate and Commercial Law</div>
-        <div class="area-desc">We advise on the full lifecycle of a business, from how it is formed to how it is governed, grown, restructured, or sold.</div>
-        <ul class="area-list">
-          <li>Company formation and structuring</li>
-          <li>Mergers, acquisitions, and due diligence</li>
-          <li>Shareholders' agreements and governance</li>
-          <li>Commercial contracts and joint ventures</li>
-          <li>Cross-border transactions and foreign equity compliance</li>
-        </ul>
+    <div class="practice-grid">
+      <div class="practice-item reveal">
+        <div class="practice-bar"></div>
+        <div class="practice-num">01</div>
+        <div class="practice-name">Corporate and Commercial Law</div>
+        <div class="practice-desc">Company formation, mergers and acquisitions, shareholders' agreements, commercial contracts, and cross-border transactions.</div>
       </div>
 
-      <div class="area reveal d1">
-        <div class="area-bar"></div>
-        <div class="area-num">02</div>
-        <div class="area-name">Litigation and Dispute Resolution</div>
-        <div class="area-desc">We appear at all levels of the Philippine court system and in arbitration and mediation proceedings, with an approach that is strategic and relentless on the client's behalf.</div>
-        <ul class="area-list">
-          <li>Civil and commercial litigation</li>
-          <li>Criminal defense and prosecution support</li>
-          <li>Arbitration and domestic mediation</li>
-          <li>Injunctions, provisional remedies, and enforcement</li>
-          <li>Appeals before the Court of Appeals and Supreme Court</li>
-        </ul>
+      <div class="practice-item reveal d1">
+        <div class="practice-bar"></div>
+        <div class="practice-num">02</div>
+        <div class="practice-name">Litigation and Dispute Resolution</div>
+        <div class="practice-desc">Civil and commercial litigation, criminal defense, arbitration, mediation, and appeals before all levels of the Philippine courts.</div>
       </div>
 
-      <div class="area reveal d2">
-        <div class="area-bar"></div>
-        <div class="area-num">03</div>
-        <div class="area-name">Taxation and Tax Advisory</div>
-        <div class="area-desc">Tax advice from lawyers who are also CPAs. We resolve exposure before it becomes liability, and we plan with the full scope of the Philippine tax framework in view.</div>
-        <ul class="area-list">
-          <li>BIR assessments, protests, and settlements</li>
-          <li>Tax planning and transfer pricing advisory</li>
-          <li>Estate and succession planning</li>
-          <li>VAT compliance and refund claims</li>
-          <li>Tax implications of corporate transactions</li>
-        </ul>
+      <div class="practice-item reveal d2">
+        <div class="practice-bar"></div>
+        <div class="practice-num">03</div>
+        <div class="practice-name">Taxation and Tax Advisory</div>
+        <div class="practice-desc">BIR assessments, tax planning, transfer pricing, estate and succession planning, VAT compliance, and tax implications of corporate transactions.</div>
       </div>
 
-      <div class="area reveal d3">
-        <div class="area-bar"></div>
-        <div class="area-num">04</div>
-        <div class="area-name">Regulatory and Compliance Advisory</div>
-        <div class="area-desc">We advise on SEC and BSP regulations, data privacy obligations, AML compliance, and the governance structures that give institutions confidence in their own operations.</div>
-        <ul class="area-list">
-          <li>SEC and BSP filings and compliance</li>
-          <li>Data Privacy Act compliance and DPO advisory</li>
-          <li>Anti-money laundering program design</li>
-          <li>Corporate governance frameworks</li>
-          <li>Industry-specific regulatory compliance</li>
-        </ul>
+      <div class="practice-item reveal d3">
+        <div class="practice-bar"></div>
+        <div class="practice-num">04</div>
+        <div class="practice-name">Regulatory and Compliance Advisory</div>
+        <div class="practice-desc">SEC and BSP compliance, Data Privacy Act advisory, anti-money laundering programs, and corporate governance frameworks.</div>
       </div>
     </div>
-
   </div>
 </section>
 
 
-<!-- WHY AMBRAY -->
-<section class="why">
-  <div class="wrap">
-    <h2 class="why-title reveal">What you should expect when you engage this firm.</h2>
-    <div class="why-grid">
+<!-- TEAM -->
+<section class="section alt">
+  <div class="wrap-wide">
+    <div class="sec-tag reveal">Our People</div>
+    <h2 class="sec-title reveal d1">The Team</h2>
+    <div class="gold-line reveal d2"></div>
 
-      <div class="why-item reveal">
-        <div class="why-gem"></div>
-        <div class="why-name">Law and Accounting Together</div>
-        <div class="why-desc">Both partners hold CPA certification alongside their legal qualifications. In matters of tax, corporate structuring, and financial disputes, this is a substantive advantage in how we frame and resolve problems.</div>
+    <div class="team-grid">
+      <div class="team-card reveal">
+        <div class="team-name">Atty. Aquino F. Ambray, CPA</div>
+        <div class="team-role">Managing Partner</div>
+        <div class="team-desc">Leads the firm's legal strategy and client advisory across all practice areas. Holds both legal qualification and CPA certification, with expertise across corporate law, taxation, and dispute resolution.</div>
       </div>
 
-      <div class="why-item reveal d1">
-        <div class="why-gem"></div>
-        <div class="why-name">Boutique Depth</div>
-        <div class="why-desc">The partner who met you is the partner who leads your matter. There is no attenuation of attention between engagement and delivery.</div>
+      <div class="team-card reveal d1">
+        <div class="team-name">Atty. Aliya Safara B. Ambray</div>
+        <div class="team-role">Partner</div>
+        <div class="team-desc">Manages client engagements and legal operations with a practice focused on regulatory matters, compliance advisory, and commercial transactions.</div>
       </div>
 
-      <div class="why-item reveal d2">
-        <div class="why-gem"></div>
-        <div class="why-name">Absolute Confidentiality</div>
-        <div class="why-desc">Confidentiality is a founding principle, not a policy. What is shared in this firm stays in this firm, from the first inquiry to the final resolution.</div>
+      <div class="team-card reveal d2">
+        <div class="team-name">Business Development and Operations</div>
+        <div class="team-role">Client Relations &amp; Firm Operations</div>
+        <div class="team-desc">Handles client intake, business development, communications, and day-to-day firm operations to ensure every engagement is well-coordinated from first inquiry to final resolution.</div>
       </div>
 
-      <div class="why-item reveal">
-        <div class="why-gem"></div>
-        <div class="why-name">Clear Counsel</div>
-        <div class="why-desc">We tell our clients what the law says, what the risk is, what we recommend, and why, in terms that allow them to make informed decisions with confidence.</div>
+      <div class="team-card reveal d3">
+        <div class="team-name">Administrative and Support Team</div>
+        <div class="team-role">Office Management, Finance &amp; Regulatory Coordination</div>
+        <div class="team-desc">Manages office operations, financial requirements, and coordination with relevant government agencies and regulatory bodies to support the firm's legal work efficiently.</div>
       </div>
-
-      <div class="why-item reveal d1">
-        <div class="why-gem"></div>
-        <div class="why-name">Based in Alabang</div>
-        <div class="why-desc">Located at the 17th Floor of Insular Life Corporate Centre, we are at the center of Metro Manila's southern business district and accessible without a cross-city engagement.</div>
-      </div>
-
-      <div class="why-item reveal d2">
-        <div class="why-gem"></div>
-        <div class="why-name">Response Within One Business Day</div>
-        <div class="why-desc">Every inquiry receives a substantive response within one business day. Clients who reach out are not placed in a queue. They are met by a member of the firm.</div>
-      </div>
-
     </div>
   </div>
 </section>
 
 
 <!-- CONTACT -->
-<section class="contact" id="contact">
-  <div class="wrap">
+<section class="section parch" id="contact">
+  <div class="wrap-wide">
     <div class="contact-grid">
 
-      <div class="contact-sticky">
+      <div>
+        <img class="contact-logo reveal" src="NO BACKGROUND - Deep Crimson Font.png" alt="Ambray Law &amp; Advisory">
         <div class="sec-tag reveal">Get in Touch</div>
-        <h2 class="contact-title reveal d1">Tell us about your matter.</h2>
-        <p class="contact-note reveal d2">
-          All inquiries are treated with full confidentiality from the moment they are received. Every matter we have taken on started with a first conversation.
+        <h2 class="sec-title reveal d1">Contact Us</h2>
+        <div class="gold-line reveal d2"></div>
+        <p class="body-text reveal d2" style="font-size:17px;margin-bottom:32px">
+          All inquiries are treated with full confidentiality. We respond to every inquiry within one business day.
         </p>
 
-        <div class="contact-details reveal d3">
+        <div class="cd-group reveal d3">
           <div class="cd">
             <div class="cd-label">Telephone</div>
             <div class="cd-val"><a href="tel:+639690940610">+63 969 094 0610</a></div>
@@ -1186,7 +670,7 @@ footer {
           <div class="cd-sep"></div>
           <div class="cd">
             <div class="cd-label">Email</div>
-            <div class="cd-val"><a href="mailto:diana.ambray@ambraylaw.com">diana.ambray@ambraylaw.com</a></div>
+            <div class="cd-val"><a href="mailto:ambray@ambraylaw.com">ambray@ambraylaw.com</a></div>
           </div>
           <div class="cd-sep"></div>
           <div class="cd">
@@ -1205,67 +689,20 @@ footer {
         </div>
       </div>
 
+      <!-- Careers -->
       <div>
-        <form class="form" id="contactForm">
-          <div class="form-row">
-            <div class="field">
-              <label for="first_name">First Name</label>
-              <input type="text" id="first_name" placeholder="Given name" required>
-            </div>
-            <div class="field">
-              <label for="last_name">Last Name</label>
-              <input type="text" id="last_name" placeholder="Family name" required>
-            </div>
-          </div>
+        <div class="sec-tag reveal">Careers</div>
+        <h2 class="sec-title reveal d1">Join the Firm</h2>
+        <div class="gold-line reveal d2"></div>
 
-          <div class="field">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" placeholder="your@email.com" required>
-          </div>
-
-          <div class="field">
-            <label for="phone">Contact Number</label>
-            <input type="tel" id="phone" placeholder="+63">
-          </div>
-
-          <div class="field">
-            <label for="matter_type">Nature of Your Matter</label>
-            <select id="matter_type">
-              <option value="">Select a practice area</option>
-              <option>Corporate and Commercial Law</option>
-              <option>Litigation and Dispute Resolution</option>
-              <option>Taxation and Tax Advisory</option>
-              <option>Regulatory and Compliance Advisory</option>
-              <option>Labor and Employment</option>
-              <option>Real Estate and Property</option>
-              <option>Intellectual Property</option>
-              <option>Family Law and Succession</option>
-              <option>Other Legal Matter</option>
-            </select>
-          </div>
-
-          <div class="field">
-            <label for="message">Brief Description</label>
-            <textarea id="message" placeholder="Please describe what you need counsel on. All information shared is strictly confidential."></textarea>
-          </div>
-
-          <p class="form-note">
-            Submitting this form does not establish an attorney-client relationship. All information you share is held in strict professional confidence.
+        <div class="careers-box reveal d2">
+          <div class="careers-title">Opportunities at Ambray Law &amp; Advisory</div>
+          <p class="careers-body">
+            We are always open to hearing from talented individuals who share our commitment to excellence, discretion, and integrity. If you are interested in joining the firm when an opportunity becomes available, we welcome you to send your resume and a brief introduction.
           </p>
-
-          <button type="submit" class="form-btn" id="submitBtn">Submit Inquiry</button>
-        </form>
-
-        <div class="form-error" id="formError">
-          We were unable to send your inquiry at this time. Please email us at
-          <a href="mailto:diana.ambray@ambraylaw.com">diana.ambray@ambraylaw.com</a>
-          or call <a href="tel:+639690940610">+63 969 094 0610</a>.
-        </div>
-
-        <div class="form-success" id="formSuccess">
-          <div class="success-gem"></div>
-          <div class="success-title">Your inquiry has been received.</div>
-          <div class="success-body">A member of the firm will be in touch within one business day. All information you have shared is held in the strictest confidence.</div>
+          <a href="mailto:ambray@ambraylaw.com?subject=Career Inquiry — Ambray Law %26 Advisory" class="careers-email">
+            Send Your Resume
+          </a>
         </div>
       </div>
 
@@ -1277,126 +714,50 @@ footer {
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
-    <div class="footer-top">
-      <div>
-        <div class="footer-ambray">AMBRAY</div>
-        <div class="footer-div">
-          <div class="fdl"></div><div class="fdg"></div><div class="fdl"></div>
-        </div>
-        <div class="footer-law">Law &amp; Advisory &nbsp;·&nbsp; CPA Lawyers</div>
-        <p class="footer-tagline">Full-service legal and advisory counsel for individuals, corporations, and institutions across the Philippines.</p>
-      </div>
-
-      <div>
-        <div class="footer-col-title">Practice Areas</div>
-        <ul class="footer-links">
-          <li><a href="#practice">Corporate and Commercial Law</a></li>
-          <li><a href="#practice">Litigation and Dispute Resolution</a></li>
-          <li><a href="#practice">Taxation and Tax Advisory</a></li>
-          <li><a href="#practice">Regulatory and Compliance</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <div class="footer-col-title">The Firm</div>
-        <ul class="footer-links">
-          <li><a href="#about">About Ambray</a></li>
-          <li><a href="#diamond">The Diamond Standard</a></li>
-          <li><a href="#contact">Begin a Consultation</a></li>
-          <li><a href="mailto:diana.ambray@ambraylaw.com">diana.ambray@ambraylaw.com</a></li>
-          <li><a href="tel:+639690940610">+63 969 094 0610</a></li>
-        </ul>
-      </div>
+    <div>
+      <img class="footer-logo" src="NO BACKGROUND - Deep Crimson Font.png" alt="Ambray Law &amp; Advisory">
+      <p class="footer-tagline">Full-service legal and advisory counsel for individuals, corporations, and institutions across the Philippines.</p>
     </div>
 
-    <div class="footer-bottom">
-      <div class="footer-copy">&copy; 2026 Ambray Law &amp; Advisory. All Rights Reserved.</div>
-      <div class="footer-disc">The contents of this website are for informational purposes only and do not constitute legal advice. No attorney-client relationship is formed by accessing or using this website. Ambray Law &amp; Advisory, 17th Floor, Tower 2, Insular Life Corporate Centre, Insular Drive, Alabang, Muntinlupa.</div>
+    <div class="footer-links-col">
+      <div class="footer-col-title">Practice Areas</div>
+      <ul class="footer-links">
+        <li><a href="#practice">Corporate and Commercial Law</a></li>
+        <li><a href="#practice">Litigation and Dispute Resolution</a></li>
+        <li><a href="#practice">Taxation and Tax Advisory</a></li>
+        <li><a href="#practice">Regulatory and Compliance</a></li>
+      </ul>
     </div>
+
+    <div class="footer-links-col">
+      <div class="footer-col-title">The Firm</div>
+      <ul class="footer-links">
+        <li><a href="#about">About Ambray</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+        <li><a href="mailto:ambray@ambraylaw.com">ambray@ambraylaw.com</a></li>
+        <li><a href="tel:+639690940610">+63 969 094 0610</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="footer-copy">&copy; 2026 Ambray Law &amp; Advisory. All Rights Reserved.</div>
+    <div class="footer-disc">The contents of this website are for informational purposes only and do not constitute legal advice. No attorney-client relationship is formed by accessing or using this website. Ambray Law &amp; Advisory, 17th Floor, Tower 2, Insular Life Corporate Centre, Insular Drive, Alabang, Muntinlupa.</div>
   </div>
 </footer>
 
 
 <!-- SCRIPTS -->
 <script>
-const EMAILJS_PUBLIC_KEY      = 'YOUR_PUBLIC_KEY';
-const EMAILJS_SERVICE_ID      = 'YOUR_SERVICE_ID';
-const EMAILJS_TEMPLATE_FIRM   = 'YOUR_TEMPLATE_ID_1';
-const EMAILJS_TEMPLATE_CLIENT = 'YOUR_TEMPLATE_ID_2';
-
-emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
-
-/* Nav scroll */
-window.addEventListener('scroll', () => {
-  document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 40);
-});
-
-/* Mobile nav */
-const hamburger = document.getElementById('hamburger');
-const navLinks  = document.getElementById('navLinks');
-let open = false;
-hamburger.addEventListener('click', () => {
-  open = !open;
-  navLinks.style.cssText = open
-    ? 'display:flex;flex-direction:column;gap:16px;position:fixed;top:64px;left:0;right:0;background:rgba(253,250,245,0.98);padding:28px 24px;border-bottom:1px solid rgba(201,168,76,0.14);backdrop-filter:blur(12px);z-index:99'
-    : '';
-});
-navLinks.querySelectorAll('a').forEach(a =>
-  a.addEventListener('click', () => {
-    if (window.innerWidth < 900) { navLinks.style.cssText = ''; open = false; }
-  })
-);
-
-/* Reveal */
 const io = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
   });
-}, { threshold: 0.1, rootMargin: '0px 0px -28px 0px' });
+}, { threshold: 0.1, rootMargin: '0px 0px -24px 0px' });
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
 if (matchMedia('(prefers-reduced-motion: reduce)').matches)
   document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
-
-/* Form */
-document.getElementById('contactForm').addEventListener('submit', async function(e) {
-  e.preventDefault();
-  const btn   = document.getElementById('submitBtn');
-  const errEl = document.getElementById('formError');
-  const sucEl = document.getElementById('formSuccess');
-
-  btn.disabled = true;
-  btn.classList.add('sending');
-  btn.textContent = 'Sending';
-  errEl.classList.remove('show');
-
-  const params = {
-    first_name:  document.getElementById('first_name').value.trim(),
-    last_name:   document.getElementById('last_name').value.trim(),
-    email:       document.getElementById('email').value.trim(),
-    phone:       document.getElementById('phone').value.trim() || 'Not provided',
-    matter_type: document.getElementById('matter_type').value  || 'Not specified',
-    message:     document.getElementById('message').value.trim() || 'No description provided',
-    submitted:   new Date().toLocaleString('en-PH', {
-                   timeZone: 'Asia/Manila',
-                   dateStyle: 'full',
-                   timeStyle: 'short'
-                 }),
-  };
-
-  try {
-    await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_FIRM,   params);
-    await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_CLIENT, params);
-    this.style.display = 'none';
-    sucEl.classList.add('show');
-  } catch (err) {
-    console.error(err);
-    btn.disabled = false;
-    btn.classList.remove('sending');
-    btn.textContent = 'Submit Inquiry';
-    errEl.classList.add('show');
-  }
-});
 </script>
 </body>
 </html>
