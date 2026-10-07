@@ -101,10 +101,20 @@ nav {
   background: linear-gradient(90deg, transparent, var(--gf), transparent);
 }
 
+@keyframes breathe {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.045); }
+}
+
 .hero-logo {
   width: min(640px, 90vw);
   margin: 0 auto 52px;
   display: block;
+  animation: breathe 4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-logo { animation: none; }
 }
 
 .hero-headline {
