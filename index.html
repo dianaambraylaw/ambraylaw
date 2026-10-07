@@ -332,10 +332,11 @@ nav {
 /* ── CONTACT ── */
 .contact-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 64px;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 72px;
   align-items: start;
 }
+.contact-sticky { position: sticky; top: 84px; }
 .contact-logo {
   width: 100%;
   max-width: 180px;
@@ -372,6 +373,13 @@ nav {
 .cd-sep { height: 0.5px; background: rgba(201,168,76,0.2); }
 
 /* ── CAREERS ── */
+.careers-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 72px;
+  align-items: start;
+}
+.careers-sticky { position: sticky; top: 84px; }
 .careers-box {
   background-color: rgba(201,168,76,0.12);
   border: 0.5px solid rgba(201,168,76,0.45);
@@ -509,7 +517,10 @@ footer {
   .about-sticky { position: static; }
   .practice-grid { grid-template-columns: 1fr; }
   .team-grid { grid-template-columns: 1fr; }
-  .contact-grid { grid-template-columns: 1fr; gap: 44px; }
+  .contact-grid { grid-template-columns: 1fr; gap: 36px; }
+  .contact-sticky { position: static; }
+  .careers-grid { grid-template-columns: 1fr; gap: 36px; }
+  .careers-sticky { position: static; }
   footer { padding: 40px 24px 24px; }
   .footer-bottom { flex-direction: column; }
   .footer-disc { text-align: left; }
@@ -675,57 +686,65 @@ footer {
   <div class="wrap-wide">
     <div class="contact-grid">
 
-      <div>
-        <img class="contact-logo reveal" src="ALA Logo - Deep Crimson and Gold Line Diamond.png" alt="Ambray Law &amp; Advisory">
+      <div class="contact-sticky">
         <div class="sec-tag reveal">Get in Touch</div>
         <h2 class="sec-title reveal d1">Contact Us</h2>
         <div class="gold-line reveal d2"></div>
-        <p class="body-text reveal d2" style="font-size:17px;margin-bottom:32px">
+        <p class="body-text reveal d2" style="font-size:17px;margin-bottom:0">
           All inquiries are treated with full confidentiality. We respond to every inquiry within one business day.
         </p>
+      </div>
 
-        <div class="cd-group reveal d3">
-          <div class="cd">
-            <div class="cd-label">Telephone</div>
-            <div class="cd-val"><a href="tel:+639690940610">+63 969 094 0610</a></div>
-          </div>
-          <div class="cd-sep"></div>
-          <div class="cd">
-            <div class="cd-label">Email</div>
-            <div class="cd-val"><a href="mailto:ambray@ambraylaw.com?subject=General%20Inquiry%20%E2%80%94%20Ambray%20Law%20%26%20Advisory">ambray@ambraylaw.com</a></div>
-          </div>
-          <div class="cd-sep"></div>
-          <div class="cd">
-            <div class="cd-label">Website</div>
-            <div class="cd-val"><a href="https://www.ambraylaw.com">www.ambraylaw.com</a></div>
-          </div>
-          <div class="cd-sep"></div>
-          <div class="cd">
-            <div class="cd-label">Office</div>
-            <div class="cd-val">
-              17th Floor, Tower 2<br>
-              Insular Life Corporate Centre<br>
-              Insular Drive, Alabang, Muntinlupa
-            </div>
+      <div class="cd-group reveal d3">
+        <div class="cd">
+          <div class="cd-label">Telephone</div>
+          <div class="cd-val"><a href="tel:+639690940610">+63 969 094 0610</a></div>
+        </div>
+        <div class="cd-sep"></div>
+        <div class="cd">
+          <div class="cd-label">Email</div>
+          <div class="cd-val"><a href="mailto:ambray@ambraylaw.com?subject=General%20Inquiry%20%E2%80%94%20Ambray%20Law%20%26%20Advisory">ambray@ambraylaw.com</a></div>
+        </div>
+        <div class="cd-sep"></div>
+        <div class="cd">
+          <div class="cd-label">Website</div>
+          <div class="cd-val"><a href="https://www.ambraylaw.com">www.ambraylaw.com</a></div>
+        </div>
+        <div class="cd-sep"></div>
+        <div class="cd">
+          <div class="cd-label">Office</div>
+          <div class="cd-val">
+            17th Floor, Tower 2<br>
+            Insular Life Corporate Centre<br>
+            Insular Drive, Alabang, Muntinlupa
           </div>
         </div>
       </div>
 
-      <!-- Careers -->
-      <div>
+    </div>
+  </div>
+</section>
+
+
+<!-- CAREERS -->
+<section class="section" id="careers">
+  <div class="wrap-wide">
+    <div class="careers-grid">
+
+      <div class="careers-sticky">
         <div class="sec-tag reveal">Careers</div>
         <h2 class="sec-title reveal d1">Opportunities</h2>
         <div class="gold-line reveal d2"></div>
+      </div>
 
-        <div class="careers-box reveal d2">
-          <div class="careers-title">Join Ambray Law &amp; Advisory</div>
-          <p class="careers-body">
-            If you share our commitment to excellence, discretion, and integrity, we welcome your resume and a brief introduction. The firm is open to associates, paralegals, and tax professionals on a full-time or project basis, subject to availability.
-          </p>
-          <a href="mailto:ambray@ambraylaw.com?subject=Career Inquiry — Ambray Law %26 Advisory" class="careers-email">
-            Send Your Resume
-          </a>
-        </div>
+      <div class="careers-box reveal d2">
+        <div class="careers-title">Join Ambray Law &amp; Advisory</div>
+        <p class="careers-body">
+          If you share our commitment to excellence, discretion, and integrity, we welcome your resume and a brief introduction. The firm is open to associates, paralegals, and tax professionals on a full-time or project basis, subject to availability.
+        </p>
+        <a href="mailto:ambray@ambraylaw.com?subject=Career Inquiry — Ambray Law %26 Advisory" class="careers-email">
+          Send Your Resume
+        </a>
       </div>
 
     </div>
