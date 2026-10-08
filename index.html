@@ -104,8 +104,9 @@ nav {
 }
 
 @keyframes breathe {
-  0%, 100% { transform: scale(1); }
-  50%       { transform: scale(1.045); }
+  0%   { transform: scale(0.94); opacity: 0.7; }
+  60%  { transform: scale(1.04); opacity: 1; }
+  100% { transform: scale(1);    opacity: 1; }
 }
 
 .hero-logo {
@@ -113,7 +114,8 @@ nav {
   margin: 0 auto 52px;
   display: block;
   align-self: center;
-  animation: breathe 4s ease-in-out 1;
+  animation: breathe 1.6s cubic-bezier(0.22, 1, 0.36, 1) 1 both;
+  transform-origin: center center;
 }
 
 @media (prefers-reduced-motion: reduce) {
