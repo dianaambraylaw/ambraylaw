@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ambray Law &amp; Advisory — CPA Lawyers, Alabang</title>
+<meta name="description" content="Ambray Law & Advisory is a full-service legal practice in Alabang, Muntinlupa. Corporate law, litigation, tax advisory, and regulatory compliance.">
+
+<!-- Open Graph / Facebook / LinkedIn -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ambraylaw.com/">
+<meta property="og:title" content="Ambray Law &amp; Advisory — CPA Lawyers, Alabang">
+<meta property="og:description" content="Full-service legal practice in Alabang, Muntinlupa. Corporate law, litigation, tax advisory, and regulatory compliance.">
+<meta property="og:image" content="https://ambraylaw.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Ambray Law &amp; Advisory — CPA Lawyers">
+<meta property="og:site_name" content="Ambray Law &amp; Advisory">
+<meta property="og:locale" content="en_PH">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ambray Law &amp; Advisory — CPA Lawyers, Alabang">
+<meta name="twitter:description" content="Full-service legal practice in Alabang, Muntinlupa. Corporate law, litigation, tax advisory, and regulatory compliance.">
+<meta name="twitter:image" content="https://ambraylaw.com/og-image.png">
+<meta name="twitter:image:alt" content="Ambray Law &amp; Advisory — CPA Lawyers">
+
+<!-- Favicons -->
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@200;250;300;350&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --cr:    #7b0e17;
+  --cr-d:  #5a0a12;
+  --gf:    #c9a84c;
+  --cream: #fdfaf5;
+  --ivory: #ffffff;
+  --parch: #f7f1e3;
+  --body:  #4a3f38;
+  --muted: #7a6a60;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Cormorant Garamond', serif;
+  background-color: var(--cream);
+  background-image: url('cream-texture.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--body);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+::selection { background: var(--cr); color: #fff; }
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 52px;
+  background-color: rgba(253, 250, 245, 0.97);
+  background-image: url('cream-texture.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+}
+
+.nav-logo {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+.nav-logo img {
+  height: 36px;
+  width: auto;
+  display: block;
+}
+
+.nav-contact {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--cr);
+  border: 1px solid rgba(123, 14, 23, 0.3);
+  padding: 9px 22px;
+  text-decoration: none;
+  transition: all 0.25s;
+  font-weight: 500;
+}
+.nav-contact:hover {
+  background: var(--cr);
+  color: #fff;
+}
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 100px 40px 80px;
+  background-color: var(--cream);
+  background-image: url('cream-texture.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.hero-top-bar {
+  position: absolute;
+  top: 64px; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gf), transparent);
+}
+
+@keyframes draw-in {
+  0%   { opacity: 0; filter: blur(8px); transform: scale(1.04); }
+  100% { opacity: 1; filter: blur(0);   transform: scale(1); }
+}
+
+.hero-logo {
+  width: min(640px, 90vw);
+  margin: 0 auto 52px;
+  display: block;
+  align-self: center;
+  animation: draw-in 1.6s ease-out 1 both;
+  transform-origin: center center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-logo { animation: none; }
+}
+
+.hero-headline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(18px, 2vw, 28px);
+  font-weight: 500;
+  color: var(--cr);
+  line-height: 1.35;
+  max-width: 820px;
+  white-space: nowrap;
+  margin: 0 auto 20px;
+}
+
+.hero-sub {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(17px, 1.7vw, 20px);
+  color: var(--body);
+  line-height: 1.85;
+  max-width: 520px;
+  margin: 0 auto 44px;
+}
+
+.hero-btn {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--cr);
+  padding: 14px 36px;
+  text-decoration: none;
+  transition: all 0.25s;
+  display: inline-block;
+  font-weight: 500;
+}
+.hero-btn:hover { background: var(--cr-d); }
+
+/* ── SECTION SHARED ── */
+.section {
+  padding: 88px 52px;
+}
+.section.alt { background: var(--ivory); }
+.section.parch {
+  background-color: var(--parch);
+  background-image: url('cream-texture.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.wrap { max-width: 800px; margin: 0 auto; }
+.wrap-wide { max-width: 1000px; margin: 0 auto; }
+
+.sec-tag {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 8.5px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--cr);
+  margin-bottom: 12px;
+  font-weight: 600;
+  opacity: 0.65;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.sec-tag::before {
+  content: '';
+  display: block;
+  width: 18px; height: 1px;
+  background: var(--cr);
+  opacity: 0.5;
+}
+
+.sec-title {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(20px, 2.4vw, 28px);
+  font-weight: 600;
+  color: var(--cr);
+  letter-spacing: 0.07em;
+  line-height: 1.3;
+  margin-bottom: 14px;
+}
+
+.gold-line {
+  width: 40px; height: 2px;
+  background: var(--gf);
+  opacity: 0.7;
+  margin-bottom: 28px;
+}
+
+.body-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 19px;
+  color: var(--body);
+  line-height: 2;
+  margin-bottom: 20px;
+}
+
+/* ── ABOUT ── */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 72px;
+  align-items: start;
+}
+.about-logo {
+  width: 100%;
+  max-width: 220px;
+  margin-bottom: 32px;
+  display: block;
+}
+.about-sticky { position: sticky; top: 84px; }
+
+.pull-quote {
+  padding: 24px 28px;
+  background-color: var(--parch);
+  background-image: url('cream-texture.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-left: 2px solid var(--gf);
+  margin: 28px 0;
+}
+.pull-quote p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 19px;
+  font-style: italic;
+  color: var(--cr);
+  line-height: 1.75;
+}
+
+/* ── PRACTICE AREAS ── */
+.practice-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: rgba(201,168,76,0.12);
+  margin-top: 40px;
+}
+.practice-item {
+  background: var(--ivory);
+  padding: 36px 32px;
+  position: relative;
+  transition: background 0.3s;
+}
+.practice-item:hover { background: var(--cream); }
+.practice-bar {
+  position: absolute;
+  top: 0; left: 0;
+  width: 0; height: 2px;
+  background: linear-gradient(90deg, var(--cr), var(--gf));
+  transition: width 0.4s ease;
+}
+.practice-item:hover .practice-bar { width: 100%; }
+.practice-num {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  color: var(--gf);
+  font-weight: 600;
+  margin-bottom: 10px;
+  opacity: 0.8;
+}
+.practice-name {
+  font-family: 'Cinzel', serif;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--cr);
+  letter-spacing: 0.07em;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+.practice-desc {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+  color: var(--body);
+  line-height: 1.85;
+}
+
+/* ── TEAM ── */
+.team-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 40px;
+}
+.team-card {
+  padding: 28px;
+  background: var(--cream);
+  border: 0.5px solid rgba(201,168,76,0.22);
+  border-top: 2px solid var(--cr);
+}
+.team-name {
+  font-family: 'Cinzel', serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--cr);
+  letter-spacing: 0.07em;
+  margin-bottom: 4px;
+}
+.team-role {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 8px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+.team-desc {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 15px;
+  color: var(--body);
+  line-height: 1.8;
+}
+
+/* ── CONTACT ── */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 72px;
+  align-items: start;
+}
+.contact-sticky { position: sticky; top: 84px; }
+.contact-logo {
+  width: 100%;
+  max-width: 180px;
+  margin-bottom: 28px;
+  display: block;
+}
+.cd-group {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: rgba(201,168,76,0.12);
+  border: 0.5px solid rgba(201,168,76,0.45);
+  border-top: 2px solid var(--gf);
+  padding: 32px 36px;
+}
+.cd { display: flex; flex-direction: column; gap: 4px; }
+.cd-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 8px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--cr);
+  font-weight: 600;
+  opacity: 0.6;
+}
+.cd-val {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  color: var(--body);
+  line-height: 1.6;
+}
+.cd-val a { color: inherit; text-decoration: none; transition: color 0.2s; }
+.cd-val a:hover { color: var(--cr); }
+.cd-sep { height: 0.5px; background: rgba(201,168,76,0.2); }
+
+/* ── CAREERS ── */
+.careers-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 72px;
+  align-items: start;
+}
+.careers-sticky { position: sticky; top: 84px; }
+.careers-box {
+  background-color: rgba(201,168,76,0.12);
+  border: 0.5px solid rgba(201,168,76,0.45);
+  border-top: 2px solid var(--gf);
+  padding: 40px 44px;
+  text-align: center;
+}
+.careers-title {
+  font-family: 'Cinzel', serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--cr);
+  letter-spacing: 0.1em;
+  margin-bottom: 14px;
+}
+.careers-body {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  color: var(--body);
+  line-height: 1.85;
+  max-width: 560px;
+  margin: 0 auto 24px;
+}
+.careers-email {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--cr);
+  border: 1px solid rgba(123,14,23,0.28);
+  padding: 12px 28px;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.25s;
+  font-weight: 500;
+}
+.careers-email:hover {
+  background: var(--cr);
+  color: #fff;
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--cr);
+  padding: 44px 52px 28px;
+  border-top: 2px solid rgba(201,168,76,0.2);
+}
+.footer-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.footer-logo {
+  height: 72px;
+  width: auto;
+  display: block;
+  opacity: 0.45;
+  filter: brightness(2) sepia(0.3);
+  margin-bottom: 14px;
+}
+.footer-tagline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 14px;
+  font-style: italic;
+  color: rgba(245,233,192,0.75);
+  line-height: 1.7;
+  max-width: 240px;
+}
+.footer-links-col {}
+.footer-col-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 8px;
+  letter-spacing: 0.2em;
+  color: rgba(212,175,55,0.85);
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  font-weight: 600;
+}
+.footer-links { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.footer-links a {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+  color: rgba(245,233,192,0.75);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--gf); }
+.footer-bottom {
+  max-width: 1000px;
+  margin: 32px auto 0;
+  border-top: 0.5px solid rgba(201,168,76,0.1);
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.footer-copy {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 7.5px;
+  letter-spacing: 0.1em;
+  color: rgba(212,175,55,0.65);
+  text-transform: uppercase;
+}
+.footer-disc {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 12px;
+  font-style: italic;
+  color: rgba(245,233,192,0.55);
+  max-width: 440px;
+  text-align: right;
+  line-height: 1.65;
+}
+
+/* ── REVEAL ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.in { opacity: 1; transform: translateY(0); }
+.d1 { transition-delay: 0.1s; }
+.d2 { transition-delay: 0.2s; }
+.d3 { transition-delay: 0.3s; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 840px) {
+  nav { padding: 0 22px; }
+  .hero { min-height: auto; padding: 80px 24px 60px; }
+  .hero-headline { font-size: clamp(15px, 4.2vw, 22px); white-space: normal; }
+  .section { padding: 64px 24px; }
+  .about-grid { grid-template-columns: 1fr; gap: 36px; }
+  .about-sticky { position: static; }
+  .practice-grid { grid-template-columns: 1fr; }
+  .team-grid { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; gap: 36px; }
+  .contact-sticky { position: static; }
+  .careers-grid { grid-template-columns: 1fr; gap: 36px; }
+  .careers-sticky { position: static; }
+  footer { padding: 40px 24px 24px; }
+  .footer-bottom { flex-direction: column; }
+  .footer-disc { text-align: left; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#top">
+    <img src="Ambray - Primary Logo - 1 Full Color.svg" alt="Ambray Law &amp; Advisory">
+  </a>
+  <a href="#contact" class="nav-contact">Get in Touch</a>
+</nav>
+
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-top-bar"></div>
+
+  <img
+    class="hero-logo reveal"
+    src="Ambray - CPA Lawyers Logo - 1 Full Color.svg"
+    alt="Ambray Law &amp; Advisory"
+  >
+
+  <h1 class="hero-headline reveal d1">
+    Full-service legal practice in Alabang, Muntinlupa City, Philippines.
+  </h1>
+
+  <p class="hero-sub reveal d2">
+    Serving individuals, companies, and institutions who need counsel that is precise, confidential, and genuinely invested in their outcome.
+  </p>
+
+  <a href="#about" class="hero-btn reveal d3">Learn More</a>
+</section>
+
+
+<!-- ABOUT -->
+<section class="section alt" id="about">
+  <div class="wrap-wide">
+    <div class="about-grid">
+
+      <div class="about-sticky">
+        <img class="about-logo reveal" src="Ambray - Primary Logo - 1 Full Color (TRIMMED).svg" alt="Ambray Law &amp; Advisory">
+        <div class="sec-tag reveal">The Firm</div>
+        <h2 class="sec-title reveal d1">Who We Are</h2>
+        <div class="gold-line reveal d2"></div>
+      </div>
+
+      <div>
+        <p class="body-text reveal">
+          Ambray Law &amp; Advisory is a full-service Philippine law firm based in Alabang, Muntinlupa City, providing legal counsel, representation, and advisory services to individuals, businesses, and institutions.
+        </p>
+
+        <p class="body-text reveal d1">
+          The firm's practice encompasses corporate and commercial law, taxation, litigation and dispute resolution, and regulatory compliance. Its approach is informed by a thorough understanding of the legal, commercial, and financial considerations relevant to each matter.
+        </p>
+
+        <div class="pull-quote reveal d2">
+          <p>Led by Atty. Aquino F. Ambray, CPA, the firm draws on legal and accounting disciplines to address complex transactions, tax-related matters, regulatory obligations, and disputes.
+        </p>
+        </div>
+
+        <p class="body-text reveal d2">
+          Ambray Law &amp; Advisory is committed to providing considered legal advice, diligent representation, and professional service grounded in integrity, discretion, and sound legal judgment.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- PRACTICE AREAS -->
+<section class="section" id="practice">
+  <div class="wrap-wide">
+    <div class="sec-tag reveal">Practice Areas</div>
+    <h2 class="sec-title reveal d1">What We Do</h2>
+    <div class="gold-line reveal d2"></div>
+    <p class="body-text reveal d2" style="max-width:600px">
+      Every matter is approached with the full attention of the firm's counsel, bringing expertise and care to each aspect of a client's case from start to finish.
+    </p>
+
+    <div class="practice-grid">
+      <div class="practice-item reveal">
+        <div class="practice-bar"></div>
+        <div class="practice-num">01</div>
+        <div class="practice-name">Corporate and Commercial Law</div>
+        <div class="practice-desc">Company formation, mergers and acquisitions, shareholders' agreements, commercial contracts, and cross-border transactions.</div>
+      </div>
+
+      <div class="practice-item reveal d1">
+        <div class="practice-bar"></div>
+        <div class="practice-num">02</div>
+        <div class="practice-name">Litigation and Dispute Resolution</div>
+        <div class="practice-desc">Civil and commercial litigation, criminal defense, arbitration, mediation, and appeals before all levels of the Philippine courts.</div>
+      </div>
+
+      <div class="practice-item reveal d2">
+        <div class="practice-bar"></div>
+        <div class="practice-num">03</div>
+        <div class="practice-name">Taxation and Tax Advisory</div>
+        <div class="practice-desc">BIR assessments, tax planning, transfer pricing, estate and succession planning, VAT compliance, and tax implications of corporate transactions.</div>
+      </div>
+
+      <div class="practice-item reveal d3">
+        <div class="practice-bar"></div>
+        <div class="practice-num">04</div>
+        <div class="practice-name">Regulatory and Compliance Advisory</div>
+        <div class="practice-desc">Corporate governance, data privacy, and sector-specific compliance before the SEC, BSP, and other government agencies, under Philippine and applicable international regulations.</div>
+      </div>
+
+      <div class="practice-item reveal d4" style="grid-column: 1 / -1;">
+        <div class="practice-bar"></div>
+        <div class="practice-num">05</div>
+        <div class="practice-name">Notarial Services</div>
+        <div class="practice-desc">Notarization of legal instruments, contracts, affidavits, deeds, and other documents requiring authentication.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- TEAM -->
+<section class="section alt">
+  <div class="wrap-wide">
+    <div class="sec-tag reveal">Our People</div>
+    <h2 class="sec-title reveal d1">The Team</h2>
+    <div class="gold-line reveal d2"></div>
+
+    <div class="team-grid">
+      <div class="team-card reveal">
+        <div class="team-name">Atty. Aquino F. Ambray, CPA</div>
+        <div class="team-role">Managing Partner</div>
+        <div class="team-desc">Leads the firm's legal strategy and client advisory across all practice areas. Holds both legal qualification and CPA certification, with expertise across corporate law, taxation, and dispute resolution.</div>
+      </div>
+
+      <div class="team-card reveal d1">
+        <div class="team-name">Atty. Aliya Safara B. Ambray</div>
+        <div class="team-role">Partner</div>
+        <div class="team-desc">Manages client engagements and legal operations with a practice focused on regulatory matters, compliance advisory, and commercial transactions.</div>
+      </div>
+
+      <div class="team-card reveal d2">
+        <div class="team-name">Client Development and Operations</div>
+        <div class="team-role">Client Development &amp; Firm Operations</div>
+        <div class="team-desc">Handles client intake, business development, communications, and day-to-day firm operations to ensure every engagement is well-coordinated from first inquiry to final resolution.</div>
+      </div>
+
+      <div class="team-card reveal d3">
+        <div class="team-name">Administrative and Support Team</div>
+        <div class="team-role">Office Management, Finance &amp; Regulatory Coordination</div>
+        <div class="team-desc">Manages office operations, financial requirements, and coordination with relevant government agencies and regulatory bodies to support the firm's legal work efficiently.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- CONTACT -->
+<section class="section parch" id="contact">
+  <div class="wrap-wide">
+    <div class="contact-grid">
+
+      <div class="contact-sticky">
+        <div class="sec-tag reveal">Get in Touch</div>
+        <h2 class="sec-title reveal d1">Contact Us</h2>
+        <div class="gold-line reveal d2"></div>
+        <p class="body-text reveal d2" style="font-size:17px;margin-bottom:0">
+          All inquiries are treated with full confidentiality. We respond to every inquiry within one business day.
+        </p>
+      </div>
+
+      <div class="cd-group reveal d3">
+        <div class="cd">
+          <div class="cd-label">Phone</div>
+          <div class="cd-val"><a href="tel:+639690940610">+63 969 094 0610</a></div>
+        </div>
+        <div class="cd-sep"></div>
+        <div class="cd">
+          <div class="cd-label">Email</div>
+          <div class="cd-val"><a href="mailto:ambray@ambraylaw.com?subject=General%20Inquiry%20%E2%80%94%20Ambray%20Law%20%26%20Advisory">ambray@ambraylaw.com</a></div>
+        </div>
+        <div class="cd-sep"></div>
+        <div class="cd">
+          <div class="cd-label">Website</div>
+          <div class="cd-val"><a href="https://www.ambraylaw.com">www.ambraylaw.com</a></div>
+        </div>
+        <div class="cd-sep"></div>
+        <div class="cd">
+          <div class="cd-label">Office</div>
+          <div class="cd-val">
+            17th Floor, Tower 2<br>
+            Insular Life Corporate Centre<br>
+            Insular Drive, Alabang, Muntinlupa<br>
+            Philippines
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- CAREERS -->
+<section class="section alt" id="careers">
+  <div class="wrap-wide">
+    <div class="careers-grid">
+
+      <div class="careers-sticky">
+        <div class="sec-tag reveal">Careers</div>
+        <h2 class="sec-title reveal d1">Opportunities</h2>
+        <div class="gold-line reveal d2"></div>
+      </div>
+
+      <div class="careers-box reveal d2">
+        <div class="careers-title">Join Ambray Law &amp; Advisory</div>
+        <p class="careers-body">
+          If you share our commitment to excellence, discretion, and integrity, we welcome your resume and a brief introduction. The firm is open to associates, paralegals, and tax professionals on a full-time or project basis, subject to availability.
+        </p>
+        <a href="mailto:ambray@ambraylaw.com?subject=Career Inquiry — Ambray Law %26 Advisory" class="careers-email">
+          Send Your Resume
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <img class="footer-logo" src="Ambray - Primary Logo - 3 All Gold.svg" alt="Ambray Law &amp; Advisory">
+      <p class="footer-tagline">Full-service legal and advisory counsel for individuals, corporations, and institutions across the Philippines.</p>
+    </div>
+
+    <div class="footer-links-col">
+      <div class="footer-col-title">Practice Areas</div>
+      <ul class="footer-links">
+        <li><a href="#practice">Corporate and Commercial Law</a></li>
+        <li><a href="#practice">Litigation and Dispute Resolution</a></li>
+        <li><a href="#practice">Taxation and Tax Advisory</a></li>
+        <li><a href="#practice">Regulatory and Compliance</a></li>
+        <li><a href="#practice">Notarial Services</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-links-col">
+      <div class="footer-col-title">The Firm</div>
+      <ul class="footer-links">
+        <li><a href="#about">About Ambray Law & Advisory</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+        <li><a href="mailto:ambray@ambraylaw.com?subject=General%20Inquiry%20%E2%80%94%20Ambray%20Law%20%26%20Advisory">ambray@ambraylaw.com</a></li>
+        <li><a href="tel:+639690940610">+63 969 094 0610</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="footer-copy">&copy; 2026 Ambray Law &amp; Advisory. All Rights Reserved.</div>
+    <div class="footer-disc">The contents of this website are for informational purposes only and do not constitute legal advice. No attorney-client relationship is formed by accessing or using this website. Ambray Law &amp; Advisory, 17th Floor, Tower 2, Insular Life Corporate Centre, Insular Drive, Alabang, Muntinlupa, Philippines.</div>
+  </div>
+</footer>
+
+
+<!-- SCRIPTS -->
+<script>
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -24px 0px' });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+if (matchMedia('(prefers-reduced-motion: reduce)').matches)
+  document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
+</script>
+</body>
+</html>
